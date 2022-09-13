@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "Anthos",
+    "slug": "Anthos",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  },
+  "name": "Anthos"
+}
