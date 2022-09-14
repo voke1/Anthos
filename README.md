@@ -49,13 +49,21 @@ The application is developed using React Native Expo. To start with;
 - Install dependencies
 
 ```
-    $ npm install OR $ yarn install
+    $ npm install
+```
+
+```
+    $ yarn install
 ```
 
 - Start app
 
 ```
-    $ npm expo start OR yarn expo start
+    $ npm expo start
+```
+
+```
+    $ yarn expo start
 ```
 
 ## APP Test
@@ -87,7 +95,5 @@ Upon Cloning and installing dependencies, start application with
 ## Author
 
 Voke Olomu
-
-Website: https://vokeconnect.live/
 
 © All rights reserved
