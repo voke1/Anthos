@@ -51,7 +51,6 @@ exports[`Should render home component 1`] = `
     }
   >
     <Image
-      source={1}
       style=""
     />
   </View>

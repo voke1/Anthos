@@ -1,26 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 
 import {
-  BackHandler,
-  Dimensions,
-  Image,
   ImageBackground,
-  Pressable,
+  SafeAreaView,
   StyleSheet,
   Text,
   View,
-  SafeAreaView,
 } from "react-native";
-import {
-  Header,
-  TextButton,
-  TextIconButton,
-  IconButton,
-} from "../../components";
-import { setPlantItem } from "../../stores/account/productActions";
-
-import { COLORS, icons, images, SIZES, constants } from "../../constants";
-const { height, width } = Dimensions.get("window");
+import { IconButton, TextButton } from "../../components";
+import { COLORS, icons, images, SIZES } from "../../constants";
 
 const Home = ({ navigation }) => {
   return (
@@ -29,17 +17,8 @@ const Home = ({ navigation }) => {
         flex: 1,
       }}
     >
-      <ImageBackground
-        source={images.homePlant}
-        style={{
-          flex: 1,
-          borderRadius: SIZES.padding,
-          justifyContent: "flex-start",
-          paddingVertical: SIZES.padding,
-          alignItems: "center",
-        }}
-        // resizeMode="contain"
-      >
+      {/* Homescreen background Image */}
+      <ImageBackground source={images.homePlant} style={styles.backgroundImage}>
         <View style={{ flex: 1, justifyContent: "space-between" }}>
           <View
             style={{
@@ -47,51 +26,20 @@ const Home = ({ navigation }) => {
               justifyContent: "space-around",
             }}
           >
-            <Text
-              style={{
-                color: COLORS.black,
-                paddingHorizontal: SIZES.base,
-                // paddingVertical: SIZES.base,
-                fontFamily: "Poppins-Regular",
-                fontSize: 31,
-                lineHeight: 28,
-                textAlign: "center",
-              }}
-            >
+            {/* Header Text */}
+            <Text style={styles.headerText}>
               Various ornamental plants are here
             </Text>
 
-            <Text
-              style={{
-                color: COLORS.black,
-                paddingHorizontal: SIZES.base,
-                paddingVertical: SIZES.padding * 2,
-                fontFamily: "Poppins-Regular",
-                fontSize: 13,
-                lineHeight: 18,
-                textAlign: "center",
-              }}
-            >
+            {/* Sub Header Text */}
+            <Text style={styles.subTitle}>
               find the variety of ornamental plants that you like here. We have
               many plants that you can choose at will.
             </Text>
 
             <IconButton
-              label="Play"
               icon={icons.rgCarat}
-              containerStyle={{
-                height: SIZES.radius * 3,
-                width: SIZES.radius * 3,
-                alignItems: "center",
-                justifyContent: "center",
-                borderRadius: SIZES.base,
-                backgroundColor: COLORS.primary,
-                marginBottom: SIZES.base,
-                marginHorizontal: SIZES.radius * 4,
-                borderRadius: (SIZES.radius * 3) / 2,
-                alignSelf: "center",
-                elevation: 5,
-              }}
+              containerStyle={styles.onBoardingButton}
               labelStyle={{
                 color: "white",
                 fontSize: 14,
@@ -109,15 +57,7 @@ const Home = ({ navigation }) => {
           </View>
           <TextButton
             label="Admin"
-            buttonContainerStyle={{
-              height: SIZES.radius * 2,
-              alignItems: "center",
-              borderRadius: SIZES.base,
-              backgroundColor: COLORS.primary,
-              marginBottom: SIZES.base,
-              marginHorizontal: SIZES.radius * 4,
-              elevation: 5,
-            }}
+            buttonContainerStyle={styles.adminButton}
             labelStyle={{
               color: "white",
               fontSize: 14,
@@ -136,7 +76,6 @@ const Home = ({ navigation }) => {
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 0.05,
     position: "absolute",
     top: -35,
     width: "100%",
@@ -144,8 +83,54 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignContent: "center",
     justifyContent: "center",
-    // zIndex: -1,
-    // backgroundColor: "red",
+  },
+  backgroundImage: {
+    flex: 1,
+    borderRadius: SIZES.padding,
+    justifyContent: "flex-start",
+    paddingVertical: SIZES.padding,
+    alignItems: "center",
+  },
+
+  headerText: {
+    color: COLORS.black,
+    paddingHorizontal: SIZES.base,
+    fontFamily: "Poppins-Regular",
+    fontSize: 31,
+    lineHeight: 28,
+    textAlign: "center",
+  },
+  onBoardingButton: {
+    height: SIZES.radius * 3,
+    width: SIZES.radius * 3,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: SIZES.base,
+    backgroundColor: COLORS.primary,
+    marginBottom: SIZES.base,
+    marginHorizontal: SIZES.radius * 4,
+    borderRadius: (SIZES.radius * 3) / 2,
+    alignSelf: "center",
+    elevation: 5,
+  },
+  subTitle: {
+    color: COLORS.black,
+    paddingHorizontal: SIZES.base,
+    paddingVertical: SIZES.padding * 2,
+    fontFamily: "Poppins-Regular",
+    fontSize: 13,
+    lineHeight: 18,
+    textAlign: "center",
+  },
+
+  adminButton: {
+    height: SIZES.radius * 2,
+    alignItems: "center",
+    borderRadius: SIZES.base,
+    backgroundColor: COLORS.primary,
+    marginBottom: SIZES.base,
+    marginHorizontal: SIZES.radius * 4,
+    elevation: 5,
   },
 });
 

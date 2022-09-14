@@ -13,23 +13,16 @@ import { COLORS, icons, SIZES } from "../../constants";
 import SmsModal from "../Cart/SmsModal";
 import { launchImageLibrary } from "react-native-image-picker";
 import { useDispatch, useSelector } from "react-redux";
-import { setPlantItem } from "../../stores/account/productActions";
+import { setPlantItem } from "../../stores/product/productActions";
 
 const AddProduct = ({ navigation }) => {
-  const [timer, setTimer] = React.useState(60);
-  const [isDisabled, setIsDisabled] = React.useState(true);
-  const [userState, setUserState] = React.useState({});
   const [pic5, setPic5] = React.useState(null);
-  const [showCalendarModal, setShowCalendarModal] = React.useState(false);
-  const [showHeightModal, setShowHeightModal] = React.useState(false);
-  const [fullName, setFullName] = React.useState("");
-  const [uploadPic, setUploadPic] = React.useState(false);
   const [plantName, setPlantName] = React.useState("");
   const [plantPrice, setPlantPrice] = React.useState("");
   const [plantDesc, setPlantDesc] = React.useState("");
   const [showSmsModal, setShowSmsModal] = React.useState(false);
   const dispatch = useDispatch();
-  const plants = useSelector((state) => state.accountReducer.plants);
+  const plants = useSelector((state) => state.productReducer.plants);
   function checkEnabled() {
     if (plantName && plantDesc && plantPrice) {
       return false;
@@ -40,8 +33,6 @@ const AddProduct = ({ navigation }) => {
   function uploadImage() {
     let options = {
       mediaType: "photo",
-      // quality: 1,
-      // includeBase64: true,
     };
 
     launchImageLibrary(options, async (response) => {
@@ -51,17 +42,7 @@ const AddProduct = ({ navigation }) => {
         setMessage("Permission not satisfied");
       } else if (response.errorCode == "others") {
         setMessage(response.errorMessage);
-      }
-      // else if (response.assets[0].fileSize > 2097152) {
-      //   Alert.alert(
-      //     "Maximum image size exceeded",
-      //     "Please choose a file under 2MB",
-      //     [{ text: "OK" }]
-      //   );
-      // }
-      else {
-        console.log("PHOTO RESPONSE:", response);
-
+      } else {
         const file = {
           uri: response.assets[0].uri,
           name: "formFile",
@@ -97,16 +78,11 @@ const AddProduct = ({ navigation }) => {
     <SafeAreaView
       style={{
         flex: 1,
-        // justifyContent: "center",
         alignItems: "center",
         backgroundColor: COLORS.white,
-        // height: SIZES.padding * 26,
-        // borderRadius: SIZES.radius * 1.2,
         padding: SIZES.padding,
         justifyContent: "space-around",
-        // marginTop: SIZES.base * 8,
       }}
-      // activeOpacity={1}
     >
       {/* Success Modal */}
       {showSmsModal && (
@@ -121,11 +97,8 @@ const AddProduct = ({ navigation }) => {
       <Text
         style={{
           fontFamily: "Poppins-Bold",
-          // fontStyle: "normal",
-          // fontWeight: "700",
           fontSize: 28,
           lineHeight: 44,
-          // marginTop: SIZES.padding * 2,
         }}
       >
         Add Plant Product
@@ -153,11 +126,8 @@ const AddProduct = ({ navigation }) => {
       <Text
         style={{
           fontFamily: "Poppins-Regular",
-          // fontStyle: "normal",
-          // fontWeight: "700",
           fontSize: 14,
           lineHeight: 21,
-          // marginVertical: SIZES.base,
         }}
       >
         Add a beautiful and well edited photo for your plant product
@@ -165,8 +135,6 @@ const AddProduct = ({ navigation }) => {
       <FormInput
         inputStyle={{
           fontFamily: "Poppins-Regular",
-          // fontStyle: "normal",
-          // fontWeight: "700",
           fontSize: 14,
           lineHeight: 21,
         }}
@@ -174,7 +142,6 @@ const AddProduct = ({ navigation }) => {
         keyboardType="name"
         autoCompleteType="name"
         onChange={(value) => {
-          //validate email
           setPlantName(value);
         }}
         placeholder="Plant title"
@@ -187,21 +154,16 @@ const AddProduct = ({ navigation }) => {
           alignItems: "center",
         }}
         inputContainerStyle={{
-          // borderWidth: 1,
-          // borderColor: "gray",
           borderRadius: SIZES.radius * 3,
         }}
       />
 
       <FormInput
-        //   label="Email"
         value={plantDesc}
         multiline={true}
         keyboardType="name"
         autoCompleteType="name"
         onChange={(value) => {
-          //validate email
-
           setPlantDesc(value);
         }}
         placeholder="Plant Description"
@@ -215,14 +177,11 @@ const AddProduct = ({ navigation }) => {
           height: 100,
         }}
         inputContainerStyle={{
-          // borderWidth: 1,
-          // borderColor: "gray",
           borderRadius: SIZES.radius * 3,
         }}
         inputStyle={{
           fontFamily: "Poppins-Regular",
-          // fontStyle: "normal",
-          // fontWeight: "700",
+
           fontSize: 14,
           lineHeight: 21,
         }}
@@ -230,17 +189,13 @@ const AddProduct = ({ navigation }) => {
       <FormInput
         inputStyle={{
           fontFamily: "Poppins-Regular",
-          // fontStyle: "normal",
-          // fontWeight: "700",
+
           fontSize: 14,
           lineHeight: 21,
         }}
-        //   label="Email"
         keyboardType="name"
         autoCompleteType="name"
         onChange={(value) => {
-          //validate email
-
           setPlantPrice(value);
         }}
         placeholder="Plant price"
@@ -282,21 +237,16 @@ const AddProduct = ({ navigation }) => {
 const styles = StyleSheet.create({
   SigninText: {
     fontSize: 12,
-    // fontWeight: "bold",
     textAlign: "center",
     color: "white",
-    // fontStyle: "normal",
-    // fontFamily: "Poppins",
+
     lineHeight: 18,
-    // fontStyle: "normal",
     fontWeight: "600",
   },
   ProfilePixStyle: {
     justifyContent: "center",
     alignItems: "center",
-    // flex: 1,
     backgroundColor: COLORS.primary,
-    // width: SIZES.width * 0.3,
     height: 300,
     width: 200,
     margin: 2,

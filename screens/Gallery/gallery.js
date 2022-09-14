@@ -6,6 +6,7 @@ import {
   TouchableOpacity,
   View,
   ImageBackground,
+  StyleSheet,
 } from "react-native";
 import {
   Header,
@@ -24,7 +25,7 @@ import {
   images,
 } from "../../constants";
 import { useSelector, useDispatch } from "react-redux";
-import { setCart, setCartItem } from "../../stores/account/productActions";
+import { setCart, setCartItem } from "../../stores/product/productActions";
 
 const Gallery = ({ navigation, route }) => {
   React.useEffect(() => {}, []);
@@ -34,26 +35,19 @@ const Gallery = ({ navigation, route }) => {
 
   const [currentPlant, setCurrentPlant] = React.useState(dummyData.plants[0]);
 
-  const cart = useSelector((state) => state.accountReducer.cart);
+  const cart = useSelector((state) => state.productReducer.cart);
 
-  const plants = useSelector((state) => state.accountReducer.plants);
+  const plants = useSelector((state) => state.productReducer.plants);
 
   const [plantList, setPlantList] = React.useState(plants);
 
   const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    console.log("CART UPDATE:", cart);
-  }, [cart]);
-
   function addToCart(plantItem) {
     let newItem = { ...plantItem, isSelected: true };
     let newPlantList = plantList.map((item) => {
-      console.log("PLANTITEMD:", plantItem);
-      console.log("ITEM:", item);
       if (item?.id === plantItem.id) {
         item.isSelected = true;
-        console.log("ITEM SELECTED:", item);
         return item;
       }
     });
@@ -172,7 +166,6 @@ const Gallery = ({ navigation, route }) => {
       <View
         style={{
           flex: 1,
-          // backgroundColor: 'red',
         }}
       >
         <View
@@ -206,30 +199,17 @@ const Gallery = ({ navigation, route }) => {
                 >
                   <ImageBackground
                     source={item.icon}
-                    style={{
-                      width: SIZES.width,
-                      height: SIZES.height / 2,
-                      justifyContent: "flex-start",
-                      alignItems: "flex-end",
-                      padding: SIZES.base,
-                    }}
+                    style={styles.plantProduct}
                     resizeMode="contain"
                   >
                     <TextButton
-                      // loading={loading}
                       label={item.isSelected ? "Added to Cart" : "Add to Cart"}
                       isDisabled={item.isSelected ? true : false}
-                      // iconPosition="RIGHT"
-                      // icon={images.getStarted}
                       buttonContainerStyle={{
                         height: 30,
                         width: "25%",
-                        // marginTop: SIZES.base,
                         borderRadius: SIZES.radius * 3,
-                        // borderWidth: 1,
-                        // borderColor: "yellow",
                         justifyContent: "center",
-                        // borderWidth: 1,
                         padding: 0,
                         paddingHorizontal: SIZES.base * 1.5,
                         backgroundColor: item.isSelected
@@ -260,14 +240,12 @@ const Gallery = ({ navigation, route }) => {
           style={{
             width: SIZES.width,
             height: 120,
-            // flex: 1,
-            // marginVertical: SIZES.padding,
             justifyContent: "center",
             alignItems: "center",
-            // backgroundColor:"red",
             padding: SIZES.base,
           }}
         >
+          {/* Image thumbref */}
           <FlatList
             data={plantList}
             ref={thumbRef}
@@ -309,18 +287,7 @@ const Gallery = ({ navigation, route }) => {
         </View>
       </View>
 
-      <View
-        style={{
-          flex: 0.3,
-          justifyContent: "space-around",
-          borderTopLeftRadius: SIZES.padding * 2,
-          borderTopRightRadius: SIZES.padding * 2,
-          padding: SIZES.base,
-          backgroundColor: COLORS.white,
-          justifyContent: "space-around",
-          paddingHorizontal: SIZES.padding,
-        }}
-      >
+      <View style={styles.orderContainer}>
         <View
           style={{
             flexDirection: "row",
@@ -391,33 +358,14 @@ const Gallery = ({ navigation, route }) => {
           <TextButton
             // loading={loading}
             label={"PROCEED TO ORDER"}
-            // iconPosition="RIGHT"
-            // icon={images.getStarted}
-            buttonContainerStyle={{
-              height: 60,
-              width: "100%",
-              // marginTop: SIZES.base,
-              borderRadius: SIZES.radius * 3,
-              backgroundColor: COLORS.white,
-              // borderWidth: 1,
-              // borderColor: "yellow",
-              justifyContent: "center",
-              // borderWidth: 1,
-              padding: 0,
-              paddingHorizontal: SIZES.base * 1.5,
-              backgroundColor: COLORS.primary,
-            }}
+            buttonContainerStyle={styles.order}
             labelStyle={{
               color: "white",
               fontFamily: "Poppins-Regular",
               fontSize: 14,
               lineHeight: 21,
             }}
-            onPress={
-              () => navigation.navigate("CartScreen")
-              // console.log("PRESSED")
-            }
-            // disabled={isEnableSignUp() ? false : true}
+            onPress={() => navigation.navigate("CartScreen")}
             disabled={false}
           />
         </View>
@@ -425,5 +373,37 @@ const Gallery = ({ navigation, route }) => {
     </View>
   );
 };
+
+const styles = StyleSheet.create({
+  plantProduct: {
+    width: SIZES.width,
+    height: SIZES.height / 2,
+    justifyContent: "flex-start",
+    alignItems: "flex-end",
+    padding: SIZES.base,
+  },
+
+  order: {
+    height: 60,
+    width: "100%",
+    borderRadius: SIZES.radius * 3,
+    backgroundColor: COLORS.white,
+
+    justifyContent: "center",
+    padding: 0,
+    paddingHorizontal: SIZES.base * 1.5,
+    backgroundColor: COLORS.primary,
+  },
+  orderContainer: {
+    flex: 0.3,
+    justifyContent: "space-around",
+    borderTopLeftRadius: SIZES.padding * 2,
+    borderTopRightRadius: SIZES.padding * 2,
+    padding: SIZES.base,
+    backgroundColor: COLORS.white,
+    justifyContent: "space-around",
+    paddingHorizontal: SIZES.padding,
+  },
+});
 
 export default Gallery;

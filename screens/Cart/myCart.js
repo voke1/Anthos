@@ -30,7 +30,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
 
   const [discount, setDiscount] = React.useState(0);
 
-  const cart = useSelector((state) => state.accountReducer.cart);
+  const cart = useSelector((state) => state.productReducer.cart);
   const dispatch = useDispatch();
 
   const [myCartList, setMyCartList] = React.useState(cart);
@@ -38,7 +38,6 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   const [subTotal, setSubTotal] = React.useState(0);
 
   React.useEffect(() => {
-    console.log("MYCART:", cart);
     getTotal(myCartList);
     getDiscount(myCartList);
   }, []);

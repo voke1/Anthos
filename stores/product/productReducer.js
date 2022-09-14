@@ -8,7 +8,7 @@ const initialState = {
   plants: [...dummyData.plants],
 };
 
-const authReducer = (state = initialState, action) => {
+const productReducer = (state = initialState, action) => {
   switch (action.type) {
     case authActionTypes.CART_BEGIN:
       return {
@@ -49,4 +49,4 @@ const authReducer = (state = initialState, action) => {
   }
 };
 
-export default authReducer;
+export default productReducer;

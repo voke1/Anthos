@@ -11,7 +11,6 @@ const Routes = () => {
   return (
 
     <NavigationContainer>
-
       <StatusBar backgroundColor={COLORS.primary}/>
       <Stack.Navigator
         screenOptions={{

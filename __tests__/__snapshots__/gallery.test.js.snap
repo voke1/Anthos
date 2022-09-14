@@ -131,7 +131,6 @@ exports[`Should render home component 1`] = `
       </View>
       <View
         resizeMode="contain"
-        source={1}
         style={
           Object {
             "alignItems": "center",

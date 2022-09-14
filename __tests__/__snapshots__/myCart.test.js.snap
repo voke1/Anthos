@@ -112,7 +112,6 @@ exports[`Should render MyCart component 1`] = `
     >
       <Image
         resizeMode="contain"
-        source={1}
         style={
           Object {
             "height": 15,

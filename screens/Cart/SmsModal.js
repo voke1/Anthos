@@ -96,6 +96,7 @@ const SmsModal = ({ isVisible, onClose, navigation }) => {
               lineHeight: 21,
             }}
             onPress={() => {
+              // Close modal and navigate to Gallery Screen
               setShowSmsModal(false);
               navigation.navigate("GalleryScreen");
             }}

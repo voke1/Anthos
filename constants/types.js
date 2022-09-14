@@ -1,4 +1,4 @@
-///Account
+///Product
 
 export const CART_BEGIN = "CART_BEGIN";
 
