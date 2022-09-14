@@ -8,8 +8,10 @@ const backCarat = require("../assets/icons/backCarat.png");
 const store = require("../assets/icons/store.png");
 const plus = require("../assets/icons/plus.png");
 const minus = require("../assets/icons/minus.png");
+const addItem = require("../assets/icons/addItem.png");
 
 export default {
+  addItem,
   plus,
   minus,
   backCarat,

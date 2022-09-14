@@ -5,7 +5,7 @@ export const COLORS = {
   primary: "#61C7A4",
   secondary: "#F7F5FA",
   main: "#E5E5E5",
-  bodyMain: "rgba(0,0,0,0.1)",
+  lightPrimary: "rgba(97, 199, 164, 0.4)",
 
   white: "#fff",
   lightGreen: "#4BEE70",

@@ -353,10 +353,19 @@ const Gallery = ({ navigation, route }) => {
           }}
         >
           <TextButton
-            // loading={loading}
             isDisabled={cart.length < 1 ? true : false}
             label={"PROCEED TO ORDER"}
-            buttonContainerStyle={styles.order}
+            buttonContainerStyle={{
+              height: 60,
+              width: "100%",
+              borderRadius: SIZES.radius * 3,
+              backgroundColor: COLORS.white,
+
+              justifyContent: "center",
+              padding: 0,
+              paddingHorizontal: SIZES.base * 1.5,
+              backgroundColor: cart.length < 1 ? COLORS.lightPrimary : COLORS.primary,
+            }}
             labelStyle={{
               color: "white",
               fontFamily: "Poppins-Regular",
@@ -381,17 +390,7 @@ const styles = StyleSheet.create({
     padding: SIZES.base,
   },
 
-  order: {
-    height: 60,
-    width: "100%",
-    borderRadius: SIZES.radius * 3,
-    backgroundColor: COLORS.white,
 
-    justifyContent: "center",
-    padding: 0,
-    paddingHorizontal: SIZES.base * 1.5,
-    backgroundColor: COLORS.primary,
-  },
   orderContainer: {
     flex: 0.3,
     justifyContent: "space-around",

@@ -18,7 +18,7 @@ import { setPlantItem } from "../../stores/product/productActions";
 const AddProduct = ({ navigation }) => {
   const [pic5, setPic5] = React.useState(null);
   const [plantName, setPlantName] = React.useState("");
-  const [plantPrice, setPlantPrice] = React.useState("");
+  const [plantPrice, setPlantPrice] = React.useState(0);
   const [plantDesc, setPlantDesc] = React.useState("");
   const [showSmsModal, setShowSmsModal] = React.useState(false);
   const dispatch = useDispatch();
@@ -106,20 +106,21 @@ const AddProduct = ({ navigation }) => {
       <Pressable style={styles.ProfilePixStyle} onPress={() => uploadImage()}>
         <Image
           source={
-            pic5?.profilePicture
-              ? { uri: pic5?.profilePicture }
-              : icons.uploadPix
+            pic5?.profilePicture ? { uri: pic5?.profilePicture } : icons.addItem
           }
           style={
             pic5?.profilePicture
               ? {
-                  height: "100%",
-                  width: "100%",
+                  height: SIZES.base,
+                  width: SIZES.base,
                   borderRadius: 50,
                   borderWidth: 5,
                   borderColor: COLORS.primary,
                 }
-              : ""
+              : {
+                  height: SIZES.radius * 2,
+                  width: SIZES.radius * 2,
+                }
           }
         />
       </Pressable>
@@ -130,7 +131,9 @@ const AddProduct = ({ navigation }) => {
           lineHeight: 21,
         }}
       >
-        Add a beautiful and well edited photo for your plant product
+        Add a beautiful and well edited photo for your plant product. Please
+        note that you can add plant product without an Image a random Image will
+        be added for you in the Gallery. (Temporary fix)
       </Text>
       <FormInput
         inputStyle={{
@@ -196,7 +199,7 @@ const AddProduct = ({ navigation }) => {
         keyboardType="name"
         autoCompleteType="name"
         onChange={(value) => {
-          setPlantPrice(value);
+          setPlantPrice(Number(value));
         }}
         placeholder="Plant price"
         containerStyle={{
@@ -219,7 +222,9 @@ const AddProduct = ({ navigation }) => {
           height: SIZES.radius * 2.4,
           alignItems: "center",
           borderRadius: SIZES.radius * 3,
-          backgroundColor: checkEnabled() ? COLORS.black : COLORS.primary,
+          backgroundColor: checkEnabled()
+            ? COLORS.lightPrimary
+            : COLORS.primary,
           width: "100%",
         }}
         labelStyle={{

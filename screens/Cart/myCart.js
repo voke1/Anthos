@@ -469,7 +469,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
             <Text style={styles.purchaseItemAmount}>{`$ ${total}`}</Text>
           </View>
 
-          {/* <View style={{ height: 100 }} /> */}
+          <View style={{ height: 100 }} />
         </View>
       </ScrollView>
       {/* Footer BUtton  */}
@@ -490,7 +490,8 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
             width: "100%",
             alignItems: "center",
             borderRadius: SIZES.radius * 3,
-            backgroundColor: COLORS.primary,
+            backgroundColor:
+              cart.length < 1 ? COLORS.lightPrimary : COLORS.primary,
             marginVertical: SIZES.padding,
             marginRight: SIZES.base,
           }}
