@@ -44,16 +44,11 @@ const Gallery = ({ navigation, route }) => {
   const dispatch = useDispatch();
 
   function addToCart(plantItem) {
-    let newItem = { ...plantItem, isSelected: true };
-    let newPlantList = plantList.map((item) => {
-      if (item?.id === plantItem.id) {
-        item.isSelected = true;
-        return item;
-      }
-    });
-
-    // setPlantList(newPlantList);
-    dispatch(setCartItem(newItem));
+    let item = cart.find((cartItem) => cartItem.id === plantItem.id);
+    if (!item) {
+      plantItem.isSelected = true;
+      dispatch(setCartItem(plantItem));
+    }
   }
 
   function renderHeader() {

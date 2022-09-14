@@ -1,6 +1,3 @@
-
-
-
 const plants = [
   {
     id: 1,
@@ -10,7 +7,7 @@ const plants = [
     qty: 1,
     amount: 1223,
     discount: 0,
-    desc: "description here",
+    desc: "description here1",
   },
   {
     id: 2,
@@ -20,7 +17,7 @@ const plants = [
     qty: 1,
     amount: 1223,
     discount: 0,
-    desc: "description here",
+    desc: "description her2e",
   },
   {
     id: 3,
@@ -30,7 +27,7 @@ const plants = [
     qty: 1,
     amount: 1223,
     discount: 0,
-    desc: "description here",
+    desc: "description her3e",
   },
   {
     id: 4,
@@ -40,7 +37,7 @@ const plants = [
     qty: 1,
     amount: 1223,
     discount: 0,
-    desc: "description here",
+    desc: "description here3",
   },
   {
     id: 5,
@@ -50,7 +47,7 @@ const plants = [
     qty: 1,
     amount: 1223,
     discount: 0,
-    desc: "description here",
+    desc: "description here3",
   },
   {
     id: 6,
@@ -60,7 +57,7 @@ const plants = [
     qty: 1,
     amount: 1223,
     discount: 0,
-    desc: "description here",
+    desc: "description here5",
   },
 ];
 

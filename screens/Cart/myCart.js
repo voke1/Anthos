@@ -22,9 +22,10 @@ import { SwipeListView } from "react-native-swipe-list-view";
 import { COLORS, dummyData, icons, SIZES } from "../../constants";
 import { useSelector, useDispatch } from "react-redux";
 import SmsModal from "./SmsModal";
+import { DELIVERY_FEE } from "../../constants/constants";
+import { setCart } from "../../stores/product/productActions";
 
 const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
-
   const [showPass, setShowPass] = React.useState(false);
   const [showSmsModal, setShowSmsModal] = React.useState(false);
 
@@ -40,13 +41,17 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   React.useEffect(() => {
     getTotal(myCartList);
     getDiscount(myCartList);
-  }, []);
+    updateCart(cart);
+  }, [cart]);
 
+  function updateCart(cart) {
+    setMyCartList(cart);
+  }
+
+  // Cart Screen Header
   function renderHeader() {
     return (
       <Header
-        // title="Discover"
-        // subtitle="Lagos, NG"
         containerStyle={{
           justifyContent: "center",
           alignItems: "center",
@@ -66,10 +71,6 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
               height: 40,
               justifyContent: "center",
               alignItems: "center",
-              // borderWidth: 1,
-              // borderRadius: SIZES.radius,
-              // borderColor: "gray",
-              // backgroundColor: "white",
             }}
             iconStyle={{
               width: 15,
@@ -133,12 +134,12 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
     getTotal(myCartList);
     getDiscount(myCartList);
 
-    setMyCartList(newMyCartList);
+    dispatch(setCart(newMyCartList));
   }
 
   function getTotal(myCartList) {
     let subTotal = myCartList.reduce((acc, obj) => acc + obj.amount, 0);
-    let total = subTotal + 1000;
+    let total = subTotal + DELIVERY_FEE;
     setSubTotal(subTotal);
     setTotal(total);
   }
@@ -164,7 +165,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
 
     getTotal(newMyCartList);
     getDiscount(newMyCartList);
-    setMyCartList(newMyCartList);
+    dispatch(setCart(newMyCartList));
   }
 
   return (
@@ -442,7 +443,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
               }}
             >
               <Text style={styles.purchaseItem}>Delivery fee</Text>
-              <Text style={styles.purchaseItemAmount}>$1000</Text>
+              <Text style={styles.purchaseItemAmount}>{`$${DELIVERY_FEE}`}</Text>
             </View>
             <View
               style={{
