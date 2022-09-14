@@ -39,8 +39,8 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   const [subTotal, setSubTotal] = React.useState(0);
 
   React.useEffect(() => {
-    getTotal(myCartList);
-    getDiscount(myCartList);
+    getTotal(cart);
+    getDiscount(cart);
     updateCart(cart);
   }, [cart]);
 
@@ -112,7 +112,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   }
 
   function updateQuantityHandler(newQty, id) {
-    const newMyCartList = myCartList.map((item) => {
+    const newMyCartList = cart.map((item) => {
       if (item.id === id) {
         item.qty = newQty;
         item.discount = newQty > 3 ? 50 : 0;
@@ -131,8 +131,8 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
       }
     });
 
-    getTotal(myCartList);
-    getDiscount(myCartList);
+    getTotal(cart);
+    getDiscount(cart);
 
     dispatch(setCart(newMyCartList));
   }
@@ -154,7 +154,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   }
 
   function removeMyCartHandler(item) {
-    let newMyCartList = [...myCartList];
+    let newMyCartList = [...cart];
     const index = newMyCartList.findIndex((cart) => {
       if (cart.id === item.id) {
         item.isSelected = false;
@@ -443,7 +443,9 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
               }}
             >
               <Text style={styles.purchaseItem}>Delivery fee</Text>
-              <Text style={styles.purchaseItemAmount}>{`$${DELIVERY_FEE}`}</Text>
+              <Text
+                style={styles.purchaseItemAmount}
+              >{`$${DELIVERY_FEE}`}</Text>
             </View>
             <View
               style={{
@@ -481,6 +483,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
         }}
       >
         <TextButton
+          isDisabled={cart.length < 1 ? true : false}
           label="Proceed to checkout"
           buttonContainerStyle={{
             height: SIZES.radius * 2.4,

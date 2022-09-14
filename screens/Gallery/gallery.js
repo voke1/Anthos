@@ -43,6 +43,7 @@ const Gallery = ({ navigation, route }) => {
 
   const dispatch = useDispatch();
 
+  // Add Item to Cart
   function addToCart(plantItem) {
     let item = cart.find((cartItem) => cartItem.id === plantItem.id);
     if (!item) {
@@ -140,6 +141,7 @@ const Gallery = ({ navigation, route }) => {
     );
   }
 
+  // Scroll Plant Product
   const scrollToActiveIndex = (index) => {
     setActiveIndex(index);
     topRef?.current?.scrollToOffset({
@@ -352,6 +354,7 @@ const Gallery = ({ navigation, route }) => {
         >
           <TextButton
             // loading={loading}
+            isDisabled={cart.length < 1 ? true : false}
             label={"PROCEED TO ORDER"}
             buttonContainerStyle={styles.order}
             labelStyle={{
