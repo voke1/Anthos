@@ -2,7 +2,6 @@
 
 This is the solution to the engineering Challenge from SlashDev.
 
-
 ## Features/Screens
 
 1. Splashscreen.
@@ -17,6 +16,7 @@ This is the solution to the engineering Challenge from SlashDev.
 
 - React Native Expo CLI,
 - Redux,
+- Jest (Testing Library)
 - Redux-thunk
 - Javascript,
 - React Navigation
@@ -26,7 +26,7 @@ This is the solution to the engineering Challenge from SlashDev.
 
 ## Screenshots
 
-![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/cart.jpeg?raw=true)
+![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/cart.png?raw=true)
 
 ## APP Installation and Usage
 
@@ -48,6 +48,32 @@ The application is developed using React Native Expo. To start with;
 
 ```
     $ npm expo start OR yarn expo start
+```
+
+## APP Test
+
+The Testing library used is Jest. To run test;
+
+Upon Cloning and installing dependencies, start application with
+
+- Start application
+
+```
+    $ npm expo start
+```
+
+```
+    $yarn expo start
+```
+
+- Run Test
+
+```
+    $ npm test
+```
+
+```
+    $ yarn test
 ```
 
 ## Author
