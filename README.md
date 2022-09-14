@@ -26,7 +26,15 @@ This is the solution to the engineering Challenge from SlashDev.
 
 ## Screenshots
 
-![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/cart.png?raw=true)
+![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/cart.jpeg?raw=true)
+
+![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/galler.jpeg?raw=true)
+
+![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/home.jpeg?raw=true)
+
+![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/modal.jpeg?raw=true)
+
+![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/splash.jpeg?raw=true)
 
 ## APP Installation and Usage
 
