@@ -24,7 +24,7 @@ import { useSelector, useDispatch } from "react-redux";
 import SmsModal from "./SmsModal";
 import { DELIVERY_FEE } from "../../constants/constants";
 import { setCart, setPlantItem } from "../../stores/product/productActions";
-
+import KeyboardAvoidingWrapper from "../Admin/KeyboardAvoidingWrapper";
 const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   const [showPass, setShowPass] = useState(false);
   const [showSmsModal, setShowSmsModal] = useState(false);
@@ -173,337 +173,338 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   }
 
   return (
-    <SafeAreaView
-      //   visible={isSuccessVisible}
-      style={{
-        flex: 1,
-
-        backgroundColor: COLORS.main,
-      }}
-    >
-      {renderHeader()}
-
-      {/* Success Modal */}
-      {showSmsModal && (
-        <SmsModal
-          isVisible={showSmsModal}
-          onClose={() => {
-            setShowSmsModal(false);
-          }}
-          navigation={navigation}
-        />
-      )}
-
-      <Text
+    <KeyboardAvoidingWrapper>
+      <SafeAreaView
         style={{
-          paddingHorizontal: SIZES.padding,
-          fontSize: 25,
-          lineHeight: 40,
-          fontFamily: "Poppins-Bold",
-          color: COLORS.primary,
+          flex: 1,
+
+          backgroundColor: COLORS.main,
         }}
       >
-        My Cart
-      </Text>
-      <ScrollView
-        contentContainarStyle={{
-          marginHorizontal: SIZES.padding,
-          justifyContent: "space-around",
-          backgroundColor: COLORS.lightPrimary,
-        }}
-        showsVerticalScrollIndicator={false}
-      >
-        <SwipeListView
-          data={myCartList}
-          disableRightSwipe={true}
-          rightOpenValue={-75}
-          keyExtractor={(item) => `${item.id}`}
-          showsVerticalScrollIndicator={false}
-          contentContainerStyle={{
-            backgroundColor: "white",
-            borderRadius: SIZES.radius,
-            marginHorizontal: SIZES.padding,
-            padding: SIZES.base,
-            marginVertical: SIZES.padding,
+        {renderHeader()}
+
+        {/* Success Modal */}
+        {showSmsModal && (
+          <SmsModal
+            isVisible={showSmsModal}
+            onClose={() => {
+              setShowSmsModal(false);
+            }}
+            navigation={navigation}
+          />
+        )}
+
+        <Text
+          style={{
+            paddingHorizontal: SIZES.padding,
+            fontSize: 25,
+            lineHeight: 40,
+            fontFamily: "Poppins-Bold",
+            color: COLORS.primary,
           }}
-          renderItem={({ item, index }) => (
-            <View
-              style={{
-                flexDirection: "row",
-                alignItems: "center",
-                elevation: 2,
-                marginBottom: SIZES.base,
-                // borderWidth: 1,
-                borderRadius: SIZES.base,
-                padding: SIZES.padding,
-                shadowOffset: { width: 5, height: 3 },
-                shadowColor: COLORS.primary,
-                shadowOpacity: 0.5,
-                backgroundColor: COLORS.main,
-              }}
-            >
-              <Image
-                source={item.uploaded ? { uri: item.icon } : item.icon}
-                resizeMode="contain"
-                style={{ height: 80, width: 70 }}
-              />
-              <View style={{ flex: 3 }}>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    paddingLeft: SIZES.base,
-                  }}
-                >
-                  <Text
+        >
+          My Cart
+        </Text>
+        <ScrollView
+          contentContainarStyle={{
+            marginHorizontal: SIZES.padding,
+            justifyContent: "space-around",
+            backgroundColor: COLORS.lightPrimary,
+          }}
+          showsVerticalScrollIndicator={false}
+        >
+          <SwipeListView
+            data={myCartList}
+            disableRightSwipe={true}
+            rightOpenValue={-75}
+            keyExtractor={(item) => `${item.id}`}
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={{
+              backgroundColor: "white",
+              borderRadius: SIZES.radius,
+              marginHorizontal: SIZES.padding,
+              padding: SIZES.base,
+              marginVertical: SIZES.padding,
+            }}
+            renderItem={({ item, index }) => (
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  elevation: 2,
+                  marginBottom: SIZES.base,
+                  // borderWidth: 1,
+                  borderRadius: SIZES.base,
+                  padding: SIZES.padding,
+                  shadowOffset: { width: 5, height: 3 },
+                  shadowColor: COLORS.primary,
+                  shadowOpacity: 0.5,
+                  backgroundColor: COLORS.main,
+                }}
+              >
+                <Image
+                  source={item.uploaded ? { uri: item.icon } : item.icon}
+                  resizeMode="contain"
+                  style={{ height: 80, width: 70 }}
+                />
+                <View style={{ flex: 3 }}>
+                  <View
                     style={{
-                      fontFamily: "Poppins-Bold",
-                      fontSize: 16,
-                      lineHeight: 20,
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      paddingLeft: SIZES.base,
                     }}
                   >
-                    {item.name}
-                  </Text>
-                  <Image
-                    source={icons.redClose}
-                    resizeMode="contain"
-                    style={{ tintColor: "black", width: 15, height: 15 }}
-                  />
-                </View>
-                <Text
-                  style={{
-                    fontFamily: "Poppins",
-                    fontSize: 11,
-                    lineHeight: 16,
-                    color: "gray",
-                    paddingLeft: SIZES.base,
-                  }}
-                >
-                  Premium Price
-                </Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    paddingLeft: SIZES.base,
-                    alignItems: "center",
-                  }}
-                >
+                    <Text
+                      style={{
+                        fontFamily: "Poppins-Bold",
+                        fontSize: 16,
+                        lineHeight: 20,
+                      }}
+                    >
+                      {item.name}
+                    </Text>
+                    <Image
+                      source={icons.redClose}
+                      resizeMode="contain"
+                      style={{ tintColor: "black", width: 15, height: 15 }}
+                    />
+                  </View>
                   <Text
                     style={{
-                      fontFamily: "Poppins-Bold",
-                      fontSize: 12,
-                      lineHeight: 18,
-                      color: COLORS.primary,
+                      fontFamily: "Poppins",
+                      fontSize: 11,
+                      lineHeight: 16,
+                      color: "gray",
+                      paddingLeft: SIZES.base,
                     }}
                   >
-                    {item.amount}
+                    Premium Price
                   </Text>
-                  <StepperInput
-                    valueContainerStyle={{}}
-                    valueStyle={{
-                      color: COLORS.primary,
-                      fontFamily: "Poppins-Bold",
-                      fontSize: 12,
-                      lineHeight: 18,
+                  <View
+                    style={{
+                      flexDirection: "row",
+                      justifyContent: "space-between",
+                      paddingLeft: SIZES.base,
+                      alignItems: "center",
                     }}
-                    onMinusContainerStyle={{
-                      borderWidth: 1,
-                      borderColor: COLORS.primary,
-                      borderRadius: 80,
-                    }}
-                    onPlusContainerStyle={{
-                      borderWidth: 1,
-                      borderColor: COLORS.primary,
-                      borderRadius: 80,
-                    }}
-                    containerStyle={{
-                      height: 40,
-                      width: 40,
-                      width: 125,
-                      backgroundColor: COLORS.white,
-                      // borderWidth: 1,
-                      // borderColor: COLORS.primary,
-                    }}
-                    value={item.qty}
-                    onAdd={() => {
-                      updateQuantityHandler(item.qty + 1, item.id);
-                    }}
-                    onMinus={() => {
-                      if (item.qty > 1) {
-                        updateQuantityHandler(item.qty - 1, item.id);
-                      }
-                    }}
-                  />
+                  >
+                    <Text
+                      style={{
+                        fontFamily: "Poppins-Bold",
+                        fontSize: 12,
+                        lineHeight: 18,
+                        color: COLORS.primary,
+                      }}
+                    >
+                      {item.amount}
+                    </Text>
+                    <StepperInput
+                      valueContainerStyle={{}}
+                      valueStyle={{
+                        color: COLORS.primary,
+                        fontFamily: "Poppins-Bold",
+                        fontSize: 12,
+                        lineHeight: 18,
+                      }}
+                      onMinusContainerStyle={{
+                        borderWidth: 1,
+                        borderColor: COLORS.primary,
+                        borderRadius: 80,
+                      }}
+                      onPlusContainerStyle={{
+                        borderWidth: 1,
+                        borderColor: COLORS.primary,
+                        borderRadius: 80,
+                      }}
+                      containerStyle={{
+                        height: 40,
+                        width: 40,
+                        width: 125,
+                        backgroundColor: COLORS.white,
+                        // borderWidth: 1,
+                        // borderColor: COLORS.primary,
+                      }}
+                      value={item.qty}
+                      onAdd={() => {
+                        updateQuantityHandler(item.qty + 1, item.id);
+                      }}
+                      onMinus={() => {
+                        if (item.qty > 1) {
+                          updateQuantityHandler(item.qty - 1, item.id);
+                        }
+                      }}
+                    />
+                  </View>
                 </View>
               </View>
-            </View>
-          )}
-          renderHiddenItem={(data, rowMap) => (
-            <IconButton
-              containerStyle={{
-                flex: 1,
-                justifyContent: "flex-end",
-                backgroundColor: COLORS.primary,
-                flexDirection: "row",
-                alignItems: "center",
-                // marginTop: SIZES.radius,
-                paddingHorizontal: SIZES.radius,
-                borderRadius: SIZES.radius,
-                alignItems: "center",
-                elevation: 2,
-                marginBottom: SIZES.base,
-                // borderWidth: 1,
-                borderRadius: SIZES.base,
-                padding: SIZES.padding,
-                shadowOffset: { width: 5, height: 3 },
-                shadowColor: COLORS.primary,
-                shadowOpacity: 0.5,
-              }}
-              icon={icons.deleteIcon}
-              iconStyle={{ marginRight: 10 }}
-              onPress={() => removeMyCartHandler(data.item)}
-            />
-          )}
-        />
+            )}
+            renderHiddenItem={(data, rowMap) => (
+              <IconButton
+                containerStyle={{
+                  flex: 1,
+                  justifyContent: "flex-end",
+                  backgroundColor: COLORS.primary,
+                  flexDirection: "row",
+                  alignItems: "center",
+                  // marginTop: SIZES.radius,
+                  paddingHorizontal: SIZES.radius,
+                  borderRadius: SIZES.radius,
+                  alignItems: "center",
+                  elevation: 2,
+                  marginBottom: SIZES.base,
+                  // borderWidth: 1,
+                  borderRadius: SIZES.base,
+                  padding: SIZES.padding,
+                  shadowOffset: { width: 5, height: 3 },
+                  shadowColor: COLORS.primary,
+                  shadowOpacity: 0.5,
+                }}
+                icon={icons.deleteIcon}
+                iconStyle={{ marginRight: 10 }}
+                onPress={() => removeMyCartHandler(data.item)}
+              />
+            )}
+          />
 
-        <View style={{ marginHorizontal: SIZES.padding }}>
-          <FormInput
-            label="Coupoon number"
-            keyboardType="name"
-            autoCompleteType="name"
-            placeholder="Enter Coupon"
-            onChange={(value) => {
-              setCoupon(value);
-            }}
-            inputContainerStyle={{
-              borderRadius: SIZES.radius * 3,
-              justifyContent: "center",
-              alignItems: "center",
+          <View style={{ marginHorizontal: SIZES.padding }}>
+            <FormInput
+              label="Coupoon number"
+              keyboardType="name"
+              autoCompleteType="name"
+              placeholder="Enter Coupon"
+              onChange={(value) => {
+                setCoupon(value);
+              }}
+              inputContainerStyle={{
+                borderRadius: SIZES.radius * 3,
+                justifyContent: "center",
+                alignItems: "center",
+                height: SIZES.radius * 2.4,
+                paddingHorizontal: SIZES.base,
+              }}
+              labelStyle={{
+                color: COLORS.gray,
+                fontSize: SIZES.h3,
+                fontWeight: "bold",
+              }}
+              appendComponent={
+                <TouchableOpacity
+                  style={{
+                    width: SIZES.radius,
+                    alignItems: "center",
+                    justifyContent: "center",
+                    backgroundColor: COLORS.primary,
+                    width: 100,
+                    height: 40,
+                    borderRadius: 20,
+                  }}
+                  onPress={() => setShowPass(!showPass)}
+                >
+                  <Text
+                    style={{
+                      color: "white",
+                      fontFamily: "Poppins-SemiBold",
+                      fontSize: 12,
+                      lineHeight: 18,
+                    }}
+                  >
+                    Validate
+                  </Text>
+                </TouchableOpacity>
+              }
+            />
+            <View
+              style={{
+                height: 150,
+                // backgroundColor: "red",
+                justifyContent: "space-around",
+                marginTop: SIZES.padding,
+              }}
+            >
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Text style={styles.purchaseItem}>Sub - total cost</Text>
+                <Text style={styles.purchaseItemAmount}>{`$${subTotal}`}</Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Text style={styles.purchaseItem}>Delivery fee</Text>
+                <Text
+                  style={styles.purchaseItemAmount}
+                >{`$${DELIVERY_FEE}`}</Text>
+              </View>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                }}
+              >
+                <Text style={styles.purchaseItem}>Total Discount</Text>
+                <Text style={styles.purchaseItemAmount}>{`%${discount.toFixed(
+                  2
+                )}`}</Text>
+              </View>
+            </View>
+
+            <LineDivider />
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+              }}
+            >
+              <Text style={styles.purchaseItem}>Total</Text>
+              <Text style={styles.purchaseItemAmount}>{`$ ${total}`}</Text>
+            </View>
+
+            <View style={{ height: 100 }} />
+          </View>
+        </ScrollView>
+        {/* Footer BUtton  */}
+        <View
+          style={{
+            position: "absolute",
+            bottom: 0,
+            flexDirection: "row",
+            alignItems: "center",
+            marginHorizontal: SIZES.padding,
+          }}
+        >
+          <TextButton
+            isDisabled={cart.length < 1 ? true : false}
+            label="Proceed to checkout"
+            buttonContainerStyle={{
               height: SIZES.radius * 2.4,
-              paddingHorizontal: SIZES.base,
+              width: "100%",
+              alignItems: "center",
+              borderRadius: SIZES.radius * 3,
+              backgroundColor:
+                cart.length < 1 ? COLORS.lightPrimary : COLORS.primary,
+              marginVertical: SIZES.padding,
+              marginRight: SIZES.base,
             }}
             labelStyle={{
-              color: COLORS.gray,
-              fontSize: SIZES.h3,
-              fontWeight: "bold",
+              color: "white",
+              fontSize: 14,
+              lineHeight: 21,
+              fontFamily: "Poppins-Regular",
             }}
-            appendComponent={
-              <TouchableOpacity
-                style={{
-                  width: SIZES.radius,
-                  alignItems: "center",
-                  justifyContent: "center",
-                  backgroundColor: COLORS.primary,
-                  width: 100,
-                  height: 40,
-                  borderRadius: 20,
-                }}
-                onPress={() => setShowPass(!showPass)}
-              >
-                <Text
-                  style={{
-                    color: "white",
-                    fontFamily: "Poppins-SemiBold",
-                    fontSize: 12,
-                    lineHeight: 18,
-                  }}
-                >
-                  Validate
-                </Text>
-              </TouchableOpacity>
-            }
+            onPress={() => {
+              setShowSmsModal(true);
+            }}
           />
-          <View
-            style={{
-              height: 150,
-              // backgroundColor: "red",
-              justifyContent: "space-around",
-              marginTop: SIZES.padding,
-            }}
-          >
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <Text style={styles.purchaseItem}>Sub - total cost</Text>
-              <Text style={styles.purchaseItemAmount}>{`$${subTotal}`}</Text>
-            </View>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <Text style={styles.purchaseItem}>Delivery fee</Text>
-              <Text
-                style={styles.purchaseItemAmount}
-              >{`$${DELIVERY_FEE}`}</Text>
-            </View>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-between",
-              }}
-            >
-              <Text style={styles.purchaseItem}>Total Discount</Text>
-              <Text style={styles.purchaseItemAmount}>{`%${discount.toFixed(
-                2
-              )}`}</Text>
-            </View>
-          </View>
-
-          <LineDivider />
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "space-between",
-            }}
-          >
-            <Text style={styles.purchaseItem}>Total</Text>
-            <Text style={styles.purchaseItemAmount}>{`$ ${total}`}</Text>
-          </View>
-
-          <View style={{ height: 100 }} />
         </View>
-      </ScrollView>
-      {/* Footer BUtton  */}
-      <View
-        style={{
-          position: "absolute",
-          bottom: 0,
-          flexDirection: "row",
-          alignItems: "center",
-          marginHorizontal: SIZES.padding,
-        }}
-      >
-        <TextButton
-          isDisabled={cart.length < 1 ? true : false}
-          label="Proceed to checkout"
-          buttonContainerStyle={{
-            height: SIZES.radius * 2.4,
-            width: "100%",
-            alignItems: "center",
-            borderRadius: SIZES.radius * 3,
-            backgroundColor:
-              cart.length < 1 ? COLORS.lightPrimary : COLORS.primary,
-            marginVertical: SIZES.padding,
-            marginRight: SIZES.base,
-          }}
-          labelStyle={{
-            color: "white",
-            fontSize: 14,
-            lineHeight: 21,
-            fontFamily: "Poppins-Regular",
-          }}
-          onPress={() => {
-            setShowSmsModal(true);
-          }}
-        />
-      </View>
-    </SafeAreaView>
+      </SafeAreaView>
+    </KeyboardAvoidingWrapper>
   );
 };
 
