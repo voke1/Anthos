@@ -5,14 +5,13 @@ import renderer from "react-test-renderer";
 import { Provider } from "react-redux";
 import store from "../stores/store";
 
-// Snapshot tests
-it("Should render MyCart component", async () => {
-  const renderedMyCart = renderer
-    .create(
+
+describe("MyCart Screen", () => {
+  it("Should render MyCart component correctly", async () => {
+    const renderedMyCart = render(
       <Provider store={store}>
         <MyCart />
       </Provider>
     )
-    .toJSON();
-  expect(renderedMyCart).toMatchSnapshot();
+  });
 });

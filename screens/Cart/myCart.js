@@ -233,7 +233,6 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
                   alignItems: "center",
                   elevation: 2,
                   marginBottom: SIZES.base,
-                  // borderWidth: 1,
                   borderRadius: SIZES.base,
                   padding: SIZES.padding,
                   shadowOffset: { width: 5, height: 3 },

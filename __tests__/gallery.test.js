@@ -5,15 +5,12 @@ import renderer from "react-test-renderer";
 import { Provider } from "react-redux";
 import store from "../stores/store";
 
-
-//SnapShot tests
-it("Should render home component", async () => {
-  const renderedGallery = renderer
-    .create(
+describe("Gallery Screen", () => {
+  it("Should render Gallery component correctly", async () => {
+    const renderedGallery = render(
       <Provider store={store}>
         <Gallery />
       </Provider>
-    )
-    .toJSON();
-    expect(renderedGallery).toMatchSnapshot();
+    );
+  });
 });
