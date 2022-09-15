@@ -25,7 +25,7 @@ const productReducer = (state = initialState, action) => {
     case authActionTypes.PLANTITEM_SUCCESS:
       return {
         ...state,
-        plants: [...initialState.plants],
+        plants: [...state.plants, action.payload.data],
         loading: false,
       };
 

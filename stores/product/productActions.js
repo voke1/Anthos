@@ -16,9 +16,9 @@ const setCartItemSuccess = (data) => ({
   payload: { data },
 });
 
-const setPlantItemSuccess = () => ({
+const setPlantItemSuccess = (data) => ({
   type: PLANTITEM_SUCCESS,
-  payload: {  },
+  payload: { data },
 });
 
 const setCartBegin = () => ({
@@ -37,9 +37,9 @@ export function setCartItem(data) {
   };
 }
 
-export function setPlantItem() {
+export function setPlantItem(data) {
   return async (dispatch) => {
-    return dispatch(setPlantItemSuccess());
+    return dispatch(setPlantItemSuccess(data));
   };
 }
 
