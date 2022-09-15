@@ -45,7 +45,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   useEffect(() => {
     if (showSmsModal) {
       dispatch(setCart([]));
-      dispatch(setPlantItem());
+      // dispatch(setPlantItem());
     }
   }, [showSmsModal]);
 
@@ -173,7 +173,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   }
 
   return (
-    <KeyboardAvoidingWrapper style={{backgroundColor: COLORS.main}}>
+    <KeyboardAvoidingWrapper style={{ backgroundColor: COLORS.main }}>
       <View
         style={{
           flex: 1,
@@ -205,14 +205,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
         >
           My Cart
         </Text>
-        <ScrollView
-          contentContainarStyle={{
-            marginHorizontal: SIZES.padding,
-            justifyContent: "space-around",
-            backgroundColor: COLORS.lightPrimary,
-          }}
-          showsVerticalScrollIndicator={false}
-        >
+        <ScrollView showsVerticalScrollIndicator={false}>
           <SwipeListView
             data={myCartList}
             disableRightSwipe={true}
