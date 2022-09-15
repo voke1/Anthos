@@ -24,6 +24,9 @@ This is the solution to the engineering Challenge from SlashDev.
 - React native modal
 - Eslint; Airbnb (Coding style),
 
+
+SEE VIDEO EXPLANATION HERE: https://drive.google.com/file/d/1QTVGFZZ8Q3HUbl8viyg3DNnlqNsDxLJj/view?usp=sharing
+
 ## Screenshots
 
 ![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/cart.jpeg?raw=true)
