@@ -15,6 +15,7 @@
     "axios": "^0.27.2",
     "expo": "~46.0.9",
     "expo-cli": "^6.0.5",
+    "expo-image-picker": "^13.3.1",
     "expo-splash-screen": "~0.16.2",
     "expo-status-bar": "~1.4.0",
     "jest-expo": "^46.0.1",

@@ -14,60 +14,50 @@ import SmsModal from "../Cart/SmsModal";
 import { launchImageLibrary } from "react-native-image-picker";
 import { useDispatch, useSelector } from "react-redux";
 import { setPlantItem } from "../../stores/product/productActions";
+import * as ImagePicker from "expo-image-picker";
 
 const AddProduct = ({ navigation }) => {
-  const [pic5, setPic5] = React.useState(null);
+  const [image, setImage] = React.useState(null);
   const [plantName, setPlantName] = React.useState("");
   const [plantPrice, setPlantPrice] = React.useState(0);
   const [plantDesc, setPlantDesc] = React.useState("");
   const [showSmsModal, setShowSmsModal] = React.useState(false);
   const dispatch = useDispatch();
   const plants = useSelector((state) => state.productReducer.plants);
+
   function checkEnabled() {
-    if (plantName && plantDesc && plantPrice) {
+    if (plantName && plantDesc && plantPrice && image) {
       return false;
     }
     return true;
   }
 
-  function uploadImage() {
-    let options = {
-      mediaType: "photo",
-    };
-
-    launchImageLibrary(options, async (response) => {
-      if (response.didCancel) {
-        setMessage("Cancelled image selection");
-      } else if (response.errorCode == "permission") {
-        setMessage("Permission not satisfied");
-      } else if (response.errorCode == "others") {
-        setMessage(response.errorMessage);
-      } else {
-        const file = {
-          uri: response.assets[0].uri,
-          name: "formFile",
-          type: response.assets[0].type,
-        };
-
-        setPic5({ profilePicture: file.uri });
-      }
-
-      setUploadPic(true);
+  async function uploadImage() {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [3, 4],
+      quality: 1,
     });
+
+    console.log("IMAGE RESULT:", result);
+    if (!result.cancelled) {
+      setImage(result.uri);
+    }
   }
-  let index = 7;
 
   function addPlant() {
     dispatch(
       setPlantItem({
-        id: ++index,
-        icon: require("../../assets/images/plant1.png"),
+        id: Date.now(),
+        icon: image,
         name: plantName,
         isSelected: false,
         qty: 1,
         amount: plantPrice,
         discount: 0,
         desc: plantDesc,
+        uploaded: true,
       })
     );
 
@@ -92,6 +82,7 @@ const AddProduct = ({ navigation }) => {
             setShowSmsModal(false);
           }}
           navigation={navigation}
+          screen={"ADMIN"}
         />
       )}
       <Text
@@ -105,14 +96,12 @@ const AddProduct = ({ navigation }) => {
       </Text>
       <Pressable style={styles.ProfilePixStyle} onPress={() => uploadImage()}>
         <Image
-          source={
-            pic5?.profilePicture ? { uri: pic5?.profilePicture } : icons.addItem
-          }
+          source={image ? { uri: image } : icons.addItem}
           style={
-            pic5?.profilePicture
+            image
               ? {
-                  height: SIZES.base,
-                  width: SIZES.base,
+                  height: "100%",
+                  width: "100%",
                   borderRadius: 50,
                   borderWidth: 5,
                   borderColor: COLORS.primary,
@@ -131,9 +120,7 @@ const AddProduct = ({ navigation }) => {
           lineHeight: 21,
         }}
       >
-        Add a beautiful and well edited photo for your plant product. Please
-        note that you can add plant product without an Image a random Image will
-        be added for you in the Gallery. (Temporary fix)
+        Add a beautiful and well edited photo for your plant product.
       </Text>
       <FormInput
         inputStyle={{

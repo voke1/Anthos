@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   FlatList,
   Image,
@@ -26,19 +26,17 @@ import { DELIVERY_FEE } from "../../constants/constants";
 import { setCart } from "../../stores/product/productActions";
 
 const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
-  const [showPass, setShowPass] = React.useState(false);
-  const [showSmsModal, setShowSmsModal] = React.useState(false);
-
-  const [discount, setDiscount] = React.useState(0);
-
+  const [showPass, setShowPass] = useState(false);
+  const [showSmsModal, setShowSmsModal] = useState(false);
+  const [discount, setDiscount] = useState(0);
   const cart = useSelector((state) => state.productReducer.cart);
+  const [myCartList, setMyCartList] = useState(cart);
+  const [total, setTotal] = useState(0);
+  const [subTotal, setSubTotal] = useState(0);
+  const [coupon, setCoupon] = useState("");
   const dispatch = useDispatch();
 
-  const [myCartList, setMyCartList] = React.useState(cart);
-  const [total, setTotal] = React.useState(0);
-  const [subTotal, setSubTotal] = React.useState(0);
-
-  React.useEffect(() => {
+  useEffect(() => {
     getTotal(cart);
     getDiscount(cart);
     updateCart(cart);
@@ -239,7 +237,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
               }}
             >
               <Image
-                source={item.icon}
+                source={item.uploaded ? { uri: item.icon } : item.icon}
                 resizeMode="contain"
                 style={{ height: 80, width: 70 }}
               />
@@ -293,7 +291,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
                       color: COLORS.primary,
                     }}
                   >
-                    {item.amount} {item.discount}
+                    {item.amount}
                   </Text>
                   <StepperInput
                     valueContainerStyle={{}}
@@ -365,32 +363,23 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
 
         <View style={{ marginHorizontal: SIZES.padding }}>
           <FormInput
-            label="Card number"
+            label="Coupoon number"
             keyboardType="name"
             autoCompleteType="name"
             placeholder="Enter Coupon"
             onChange={(value) => {
-              //validate email
-              // setFullName(value);
+              setCoupon(value);
             }}
             inputContainerStyle={{
-              // marginTop: SIZES.base,
               borderRadius: SIZES.radius * 3,
-              // borderWidth: 1,
-              // borderColor: COLORS.lightGray,
-
-              // // flex: 1,
               justifyContent: "center",
               alignItems: "center",
               height: SIZES.radius * 2.4,
               paddingHorizontal: SIZES.base,
-              // backgroundColor: "red"
             }}
             labelStyle={{
               color: COLORS.gray,
               fontSize: SIZES.h3,
-              // paddingBottom: SIZES.base,
-              // marginTop: SIZES.padding,
               fontWeight: "bold",
             }}
             appendComponent={
@@ -454,7 +443,9 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
               }}
             >
               <Text style={styles.purchaseItem}>Discount</Text>
-              <Text style={styles.purchaseItemAmount}>{`%${discount}`}</Text>
+              <Text style={styles.purchaseItemAmount}>{`%${discount.toFixed(
+                2
+              )}`}</Text>
             </View>
           </View>
 

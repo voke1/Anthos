@@ -4,7 +4,7 @@ import Modal from "react-native-modal";
 import { TextButton } from "../../components";
 import { COLORS, SIZES, icons } from "../../constants";
 
-const SmsModal = ({ isVisible, onClose, navigation }) => {
+const SmsModal = ({ isVisible, onClose, navigation, screen }) => {
   const modalAnimatedValue = React.useRef(new Animated.Value(0)).current;
   const [showSmsModal, setShowSmsModal] = React.useState(isVisible);
 
@@ -71,7 +71,7 @@ const SmsModal = ({ isVisible, onClose, navigation }) => {
             paddingTop: SIZES.base,
           }}
         >
-          {`Congratulations. Items(s) purchased`}
+          {screen ? `Plant product has been added to List`: `Congratulations. Items(s) purchased`}
         </Text>
 
         <View

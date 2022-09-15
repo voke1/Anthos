@@ -28,7 +28,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setCart, setCartItem } from "../../stores/product/productActions";
 
 const Gallery = ({ navigation, route }) => {
-  React.useEffect(() => {}, []);
+
   const topRef = React.useRef();
   const thumbRef = React.useRef();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -43,6 +43,9 @@ const Gallery = ({ navigation, route }) => {
 
   const dispatch = useDispatch();
 
+    React.useEffect(() => {
+      console.log("Plants",plants);
+    }, []);
   // Add Item to Cart
   function addToCart(plantItem) {
     let item = cart.find((cartItem) => cartItem.id === plantItem.id);
@@ -195,7 +198,7 @@ const Gallery = ({ navigation, route }) => {
                   }}
                 >
                   <ImageBackground
-                    source={item.icon}
+                    source={item.uploaded ? { uri: item.icon } : item.icon}
                     style={styles.plantProduct}
                     resizeMode="contain"
                   >
@@ -269,7 +272,7 @@ const Gallery = ({ navigation, route }) => {
                   }}
                 >
                   <Image
-                    source={item.icon}
+                    source={item.uploaded ? {uri: item.icon}: item.icon}
                     style={{
                       width: "100%",
                       height: "100%",
