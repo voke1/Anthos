@@ -12,10 +12,9 @@ exports[`Should render home component 1`] = `
   <View
     style={
       Object {
-        "alignItems": "center",
+        "alignItems": "flex-end",
         "flexDirection": "row",
         "height": 90,
-        "justifyContent": "center",
         "paddingHorizontal": 33.35,
       }
     }
@@ -36,8 +35,7 @@ exports[`Should render home component 1`] = `
           "alignItems": "center",
           "backgroundColor": "transparent",
           "flexDirection": "row",
-          "justifyContent": "flex-start",
-          "marginVertical": 13.34,
+          "justifyContent": "center",
           "opacity": 1,
           "paddingHorizontal": 0,
         }
@@ -176,63 +174,63 @@ exports[`Should render home component 1`] = `
         data={
           Array [
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 900,
+              "desc": "require four to six hours of bright",
               "discount": 0,
               "icon": 1,
               "id": 1,
               "isSelected": false,
-              "name": "Photo",
+              "name": "Stranded Cactus",
               "qty": 1,
             },
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 700,
+              "desc": "This gorgeous group of vine-like plants. ",
               "discount": 0,
               "icon": 1,
               "id": 2,
               "isSelected": false,
-              "name": "Shopping",
+              "name": "Leafy Cactus",
               "qty": 1,
             },
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 500,
+              "desc": "Natural, organic house plant",
               "discount": 0,
               "icon": 1,
               "id": 3,
               "isSelected": false,
-              "name": "Karaoke",
+              "name": "Sago Palm",
               "qty": 1,
             },
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 200,
+              "desc": "Cacti require four hours sunlight daily",
               "discount": 0,
               "icon": 1,
               "id": 4,
               "isSelected": false,
-              "name": "Yoga ",
+              "name": "Potted Cactus ",
               "qty": 1,
             },
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 1000,
+              "desc": "Known for its leathery skin",
               "discount": 0,
               "icon": 1,
               "id": 5,
               "isSelected": false,
-              "name": "Yoga ",
+              "name": "Dragon Cactus ",
               "qty": 1,
             },
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 200,
+              "desc": "Known for its colourfulness",
               "discount": 0,
               "icon": 1,
               "id": 6,
               "isSelected": false,
-              "name": "Yoga ",
+              "name": "Potted Pictus ",
               "qty": 1,
             },
           ]
@@ -959,63 +957,63 @@ exports[`Should render home component 1`] = `
         data={
           Array [
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 900,
+              "desc": "require four to six hours of bright",
               "discount": 0,
               "icon": 1,
               "id": 1,
               "isSelected": false,
-              "name": "Photo",
+              "name": "Stranded Cactus",
               "qty": 1,
             },
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 700,
+              "desc": "This gorgeous group of vine-like plants. ",
               "discount": 0,
               "icon": 1,
               "id": 2,
               "isSelected": false,
-              "name": "Shopping",
+              "name": "Leafy Cactus",
               "qty": 1,
             },
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 500,
+              "desc": "Natural, organic house plant",
               "discount": 0,
               "icon": 1,
               "id": 3,
               "isSelected": false,
-              "name": "Karaoke",
+              "name": "Sago Palm",
               "qty": 1,
             },
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 200,
+              "desc": "Cacti require four hours sunlight daily",
               "discount": 0,
               "icon": 1,
               "id": 4,
               "isSelected": false,
-              "name": "Yoga ",
+              "name": "Potted Cactus ",
               "qty": 1,
             },
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 1000,
+              "desc": "Known for its leathery skin",
               "discount": 0,
               "icon": 1,
               "id": 5,
               "isSelected": false,
-              "name": "Yoga ",
+              "name": "Dragon Cactus ",
               "qty": 1,
             },
             Object {
-              "amount": 1223,
-              "desc": "description here",
+              "amount": 200,
+              "desc": "Known for its colourfulness",
               "discount": 0,
               "icon": 1,
               "id": 6,
               "isSelected": false,
-              "name": "Yoga ",
+              "name": "Potted Pictus ",
               "qty": 1,
             },
           ]
@@ -1405,7 +1403,7 @@ exports[`Should render home component 1`] = `
               }
             }
           >
-            Photo
+            Stranded Cactus
           </Text>
           <Text
             style={
@@ -1417,7 +1415,7 @@ exports[`Should render home component 1`] = `
               }
             }
           >
-            description here
+            require four to six hours of bright
           </Text>
         </View>
       </View>
@@ -1431,7 +1429,7 @@ exports[`Should render home component 1`] = `
           }
         }
       >
-        $ 1223
+        $ 900
       </Text>
     </View>
     <View
@@ -1444,6 +1442,11 @@ exports[`Should render home component 1`] = `
       }
     >
       <View
+        accessibilityState={
+          Object {
+            "disabled": true,
+          }
+        }
         accessible={true}
         collapsable={false}
         focusable={true}
@@ -1457,7 +1460,7 @@ exports[`Should render home component 1`] = `
         style={
           Object {
             "alignItems": "center",
-            "backgroundColor": "#61C7A4",
+            "backgroundColor": "rgba(97, 199, 164, 0.4)",
             "borderRadius": 120.05999999999999,
             "height": 60,
             "justifyContent": "center",

@@ -1,262 +1,290 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render home component 1`] = `
-<RCTSafeAreaView
-  emulateUnlessSupported={true}
+<View
+  onLayout={[Function]}
   style={
     Object {
-      "alignItems": "center",
       "backgroundColor": "#fff",
       "flex": 1,
-      "justifyContent": "space-around",
-      "padding": 33.35,
     }
   }
 >
-  <Text
-    style={
-      Object {
-        "fontFamily": "Poppins-Bold",
-        "fontSize": 28,
-        "lineHeight": 44,
-      }
-    }
-  >
-    Add Plant Product
-  </Text>
-  <View
-    accessible={true}
-    collapsable={false}
-    focusable={true}
-    onBlur={[Function]}
-    onClick={[Function]}
-    onFocus={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#61C7A4",
-        "borderRadius": 50,
-        "height": 300,
-        "justifyContent": "center",
-        "margin": 2,
-        "width": 200,
-        "zIndex": 5,
-      }
-    }
-  >
-    <Image
-      style=""
-    />
-  </View>
-  <Text
-    style={
-      Object {
-        "fontFamily": "Poppins-Regular",
-        "fontSize": 14,
-        "lineHeight": 21,
-      }
-    }
-  >
-    Add a beautiful and well edited photo for your plant product
-  </Text>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "borderColor": "#E6E6E6",
-        "borderRadius": 120.05999999999999,
-        "borderWidth": 1,
-        "height": 96.04799999999999,
-        "justifyContent": "center",
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
-      }
-    />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderRadius": 120.05999999999999,
-          "flexDirection": "row",
-          "height": 80.03999999999999,
-          "paddingHorizontal": 33.35,
-        }
-      }
-    >
-      <TextInput
-        autoCapitalize="None"
-        autoCompleteType="name"
-        keyboardType="name"
-        onChangeText={[Function]}
-        placeholder="Plant title"
-        placeholderTextColor="gray"
+  <RCTScrollView>
+    <View>
+      <View
+        accessible={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "color": "#212125",
-            "flex": 1,
-            "fontFamily": "Poppins-Regular",
-            "fontSize": 14,
-            "lineHeight": 21,
+            "alignItems": "center",
+            "backgroundColor": "#fff",
+            "height": 1334,
+            "justifyContent": "space-around",
+            "padding": 33.35,
           }
         }
-      />
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "borderColor": "#E6E6E6",
-        "borderRadius": 40.019999999999996,
-        "borderWidth": 1,
-        "height": 100,
-        "justifyContent": "center",
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
-      }
-    />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderRadius": 120.05999999999999,
-          "flexDirection": "row",
-          "height": 80.03999999999999,
-          "paddingHorizontal": 33.35,
-        }
-      }
-    >
-      <TextInput
-        autoCapitalize="None"
-        autoCompleteType="name"
-        keyboardType="name"
-        multiline={true}
-        onChangeText={[Function]}
-        placeholder="Plant Description"
-        placeholderTextColor="gray"
-        style={
-          Object {
-            "color": "#212125",
-            "flex": 1,
-            "fontFamily": "Poppins-Regular",
-            "fontSize": 14,
-            "lineHeight": 21,
+      >
+        <Text
+          style={
+            Object {
+              "fontFamily": "Poppins-Bold",
+              "fontSize": 28,
+              "lineHeight": 44,
+            }
           }
-        }
-        value=""
-      />
-    </View>
-  </View>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "borderColor": "#E6E6E6",
-        "borderRadius": 120.05999999999999,
-        "borderWidth": 1,
-        "height": 96.04799999999999,
-        "justifyContent": "center",
-      }
-    }
-  >
-    <View
-      style={
-        Object {
-          "flexDirection": "row",
-          "justifyContent": "space-between",
-        }
-      }
-    />
-    <View
-      style={
-        Object {
-          "backgroundColor": "#fff",
-          "borderRadius": 120.05999999999999,
-          "flexDirection": "row",
-          "height": 80.03999999999999,
-          "paddingHorizontal": 33.35,
-        }
-      }
-    >
-      <TextInput
-        autoCapitalize="None"
-        autoCompleteType="name"
-        keyboardType="name"
-        onChangeText={[Function]}
-        placeholder="Plant price"
-        placeholderTextColor="gray"
-        style={
-          Object {
-            "color": "#212125",
-            "flex": 1,
-            "fontFamily": "Poppins-Regular",
-            "fontSize": 14,
-            "lineHeight": 21,
+        >
+          Add Plant Product
+        </Text>
+        <View
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onFocus={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "#61C7A4",
+              "borderRadius": 50,
+              "height": 300,
+              "justifyContent": "center",
+              "margin": 2,
+              "width": 200,
+              "zIndex": 5,
+            }
           }
-        }
-      />
+        >
+          <Image
+            source={1}
+            style={
+              Object {
+                "height": 80.03999999999999,
+                "width": 80.03999999999999,
+              }
+            }
+          />
+        </View>
+        <Text
+          style={
+            Object {
+              "fontFamily": "Poppins-Regular",
+              "fontSize": 14,
+              "lineHeight": 21,
+            }
+          }
+        >
+          Add a beautiful and well edited photo for your plant product.
+        </Text>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "#E6E6E6",
+              "borderRadius": 120.05999999999999,
+              "borderWidth": 1,
+              "height": 96.04799999999999,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 120.05999999999999,
+                "flexDirection": "row",
+                "height": 80.03999999999999,
+                "paddingHorizontal": 33.35,
+              }
+            }
+          >
+            <TextInput
+              autoCapitalize="None"
+              autoCompleteType="name"
+              keyboardType="name"
+              onChangeText={[Function]}
+              placeholder="Plant title"
+              placeholderTextColor="gray"
+              style={
+                Object {
+                  "color": "#212125",
+                  "flex": 1,
+                  "fontFamily": "Poppins-Regular",
+                  "fontSize": 14,
+                  "lineHeight": 21,
+                }
+              }
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "#E6E6E6",
+              "borderRadius": 40.019999999999996,
+              "borderWidth": 1,
+              "height": 100,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 120.05999999999999,
+                "flexDirection": "row",
+                "height": 80.03999999999999,
+                "paddingHorizontal": 33.35,
+              }
+            }
+          >
+            <TextInput
+              autoCapitalize="None"
+              autoCompleteType="name"
+              keyboardType="name"
+              multiline={true}
+              onChangeText={[Function]}
+              placeholder="Plant Description"
+              placeholderTextColor="gray"
+              style={
+                Object {
+                  "color": "#212125",
+                  "flex": 1,
+                  "fontFamily": "Poppins-Regular",
+                  "fontSize": 14,
+                  "lineHeight": 21,
+                }
+              }
+              value=""
+            />
+          </View>
+        </View>
+        <View
+          style={
+            Object {
+              "alignItems": "center",
+              "borderColor": "#E6E6E6",
+              "borderRadius": 120.05999999999999,
+              "borderWidth": 1,
+              "height": 96.04799999999999,
+              "justifyContent": "center",
+            }
+          }
+        >
+          <View
+            style={
+              Object {
+                "flexDirection": "row",
+                "justifyContent": "space-between",
+              }
+            }
+          />
+          <View
+            style={
+              Object {
+                "backgroundColor": "#fff",
+                "borderRadius": 120.05999999999999,
+                "flexDirection": "row",
+                "height": 80.03999999999999,
+                "paddingHorizontal": 33.35,
+              }
+            }
+          >
+            <TextInput
+              autoCapitalize="None"
+              autoCompleteType="name"
+              keyboardType="name"
+              onChangeText={[Function]}
+              placeholder="Plant price"
+              placeholderTextColor="gray"
+              style={
+                Object {
+                  "color": "#212125",
+                  "flex": 1,
+                  "fontFamily": "Poppins-Regular",
+                  "fontSize": 14,
+                  "lineHeight": 21,
+                }
+              }
+            />
+          </View>
+        </View>
+        <View
+          accessibilityState={
+            Object {
+              "disabled": true,
+            }
+          }
+          accessible={true}
+          collapsable={false}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "alignItems": "center",
+              "backgroundColor": "rgba(97, 199, 164, 0.4)",
+              "borderRadius": 120.05999999999999,
+              "height": 96.04799999999999,
+              "justifyContent": "center",
+              "opacity": 1,
+              "width": "100%",
+            }
+          }
+        >
+          <Text
+            style={
+              Object {
+                "color": "white",
+                "fontFamily": "Poppins-Regular",
+                "fontSize": 14,
+                "lineHeight": 21,
+              }
+            }
+          >
+            Continue
+          </Text>
+        </View>
+      </View>
     </View>
-  </View>
-  <View
-    accessibilityState={
-      Object {
-        "disabled": true,
-      }
-    }
-    accessible={true}
-    collapsable={false}
-    focusable={true}
-    onClick={[Function]}
-    onResponderGrant={[Function]}
-    onResponderMove={[Function]}
-    onResponderRelease={[Function]}
-    onResponderTerminate={[Function]}
-    onResponderTerminationRequest={[Function]}
-    onStartShouldSetResponder={[Function]}
-    style={
-      Object {
-        "alignItems": "center",
-        "backgroundColor": "#000000",
-        "borderRadius": 120.05999999999999,
-        "height": 96.04799999999999,
-        "justifyContent": "center",
-        "opacity": 1,
-        "width": "100%",
-      }
-    }
-  >
-    <Text
-      style={
-        Object {
-          "color": "white",
-          "fontFamily": "Poppins-Regular",
-          "fontSize": 14,
-          "lineHeight": 21,
-        }
-      }
-    >
-      Continue
-    </Text>
-  </View>
-</RCTSafeAreaView>
+  </RCTScrollView>
+</View>
 `;

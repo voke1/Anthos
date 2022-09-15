@@ -1,479 +1,512 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Should render MyCart component 1`] = `
-<RCTSafeAreaView
-  emulateUnlessSupported={true}
+<View
+  onLayout={[Function]}
   style={
     Object {
-      "backgroundColor": "#E5E5E5",
       "flex": 1,
     }
   }
 >
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "flexDirection": "row",
-        "height": 70,
-        "justifyContent": "center",
-        "paddingHorizontal": 33.35,
-      }
-    }
-  >
-    <View
-      accessible={true}
-      collapsable={false}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "transparent",
-          "flexDirection": "row",
-          "justifyContent": "flex-start",
-          "marginVertical": 13.34,
-          "opacity": 1,
-          "paddingHorizontal": 0,
-        }
-      }
-    >
-      <Image
-        resizeMode="contain"
-        source={1}
-        style={
-          Object {
-            "height": 40,
-            "tintColor": "#61C7A4",
-            "width": 13.34,
-          }
-        }
-      />
-      <Text
-        style={
-          Object {
-            "color": "#61C7A4",
-            "fontFamily": "Poppins-Bold",
-            "fontSize": 12,
-            "lineHeight": 18,
-            "paddingHorizontal": 13.34,
-          }
-        }
-      >
-        Back
-      </Text>
-    </View>
-    <View
-      style={
-        Object {
-          "alignItems": "center",
-          "flex": 1,
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "color": "#212125",
-            "fontFamily": "Poppins-Bold",
-            "fontSize": 18,
-            "fontWeight": "700",
-            "lineHeight": 27,
-          }
-        }
-      />
-    </View>
-    <View
-      accessible={true}
-      collapsable={false}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "height": 40,
-          "justifyContent": "center",
-          "opacity": 1,
-          "width": 40,
-        }
-      }
-    >
-      <Image
-        resizeMode="contain"
-        style={
-          Object {
-            "height": 15,
-            "tintColor": "#000000",
-            "width": 15,
-          }
-        }
-      />
-    </View>
-  </View>
-  <Text
-    style={
-      Object {
-        "color": "#61C7A4",
-        "fontFamily": "Poppins-Bold",
-        "fontSize": 25,
-        "lineHeight": 40,
-        "paddingHorizontal": 33.35,
-      }
-    }
-  >
-    My Cart
-  </Text>
-  <RCTScrollView
-    contentContainarStyle={
-      Object {
-        "backgroundColor": undefined,
-        "justifyContent": "space-around",
-        "marginHorizontal": 33.35,
-      }
-    }
-    showsVerticalScrollIndicator={false}
-  >
+  <RCTScrollView>
     <View>
-      <RCTScrollView
-        closeOnRowBeginSwipe={false}
-        closeOnRowOpen={true}
-        closeOnRowPress={true}
-        closeOnScroll={true}
-        contentContainerStyle={
-          Object {
-            "backgroundColor": "white",
-            "borderRadius": 40.019999999999996,
-            "marginHorizontal": 33.35,
-            "marginVertical": 33.35,
-            "padding": 13.34,
-          }
-        }
-        data={Array []}
-        directionalDistanceChangeThreshold={2}
-        disableHiddenLayoutCalculation={false}
-        disableLeftSwipe={false}
-        disableRightSwipe={true}
-        getItem={[Function]}
-        getItemCount={[Function]}
-        keyExtractor={[Function]}
-        leftOpenValue={0}
-        onContentSizeChange={[Function]}
-        onLayout={[Function]}
-        onMomentumScrollBegin={[Function]}
-        onMomentumScrollEnd={[Function]}
-        onScroll={[Function]}
-        onScrollBeginDrag={[Function]}
-        onScrollEndDrag={[Function]}
-        previewFirstRow={false}
-        previewRepeat={false}
-        previewRepeatDelay={1000}
-        recalculateHiddenLayout={false}
-        removeClippedSubviews={false}
-        renderHiddenItem={[Function]}
-        renderItem={[Function]}
-        rightOpenValue={-75}
-        scrollEventThrottle={50}
-        showsVerticalScrollIndicator={false}
-        stickyHeaderIndices={Array []}
-        swipeToClosePercent={50}
-        swipeToOpenPercent={50}
-        swipeToOpenVelocityContribution={0}
-        useAnimatedList={false}
-        useNativeDriver={true}
-        viewabilityConfigCallbackPairs={Array []}
-      >
-        <View />
-      </RCTScrollView>
-      <View
+      <RCTSafeAreaView
+        accessible={true}
+        emulateUnlessSupported={true}
+        focusable={true}
+        onClick={[Function]}
+        onResponderGrant={[Function]}
+        onResponderMove={[Function]}
+        onResponderRelease={[Function]}
+        onResponderTerminate={[Function]}
+        onResponderTerminationRequest={[Function]}
+        onStartShouldSetResponder={[Function]}
         style={
           Object {
-            "marginHorizontal": 33.35,
+            "backgroundColor": "#E5E5E5",
+            "flex": 1,
           }
         }
       >
         <View
-          style={Object {}}
+          style={
+            Object {
+              "alignItems": "flex-end",
+              "flexDirection": "row",
+              "height": 90,
+              "paddingHorizontal": 33.35,
+            }
+          }
         >
           <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
+                "alignItems": "center",
+                "backgroundColor": "transparent",
                 "flexDirection": "row",
-                "justifyContent": "space-between",
+                "justifyContent": "flex-start",
+                "marginVertical": 13.34,
+                "opacity": 1,
+                "paddingHorizontal": 0,
               }
             }
-          />
+          >
+            <Image
+              resizeMode="contain"
+              source={1}
+              style={
+                Object {
+                  "height": 40,
+                  "tintColor": "#61C7A4",
+                  "width": 13.34,
+                }
+              }
+            />
+            <Text
+              style={
+                Object {
+                  "color": "#61C7A4",
+                  "fontFamily": "Poppins-Bold",
+                  "fontSize": 12,
+                  "lineHeight": 18,
+                  "paddingHorizontal": 13.34,
+                }
+              }
+            >
+              Back
+            </Text>
+          </View>
           <View
             style={
               Object {
                 "alignItems": "center",
-                "backgroundColor": "#fff",
-                "borderRadius": 120.05999999999999,
-                "flexDirection": "row",
-                "height": 96.04799999999999,
-                "justifyContent": "center",
-                "paddingHorizontal": 13.34,
+                "flex": 1,
               }
             }
           >
-            <TextInput
-              autoCapitalize="None"
-              autoCompleteType="name"
-              keyboardType="name"
-              onChangeText={[Function]}
-              placeholder="Enter Coupon"
-              placeholderTextColor="gray"
+            <Text
               style={
                 Object {
                   "color": "#212125",
-                  "flex": 1,
+                  "fontFamily": "Poppins-Bold",
+                  "fontSize": 18,
+                  "fontWeight": "700",
+                  "lineHeight": 27,
                 }
               }
             />
-            <View
-              accessible={true}
-              collapsable={false}
-              focusable={true}
-              onClick={[Function]}
-              onResponderGrant={[Function]}
-              onResponderMove={[Function]}
-              onResponderRelease={[Function]}
-              onResponderTerminate={[Function]}
-              onResponderTerminationRequest={[Function]}
-              onStartShouldSetResponder={[Function]}
+          </View>
+          <View
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
+            style={
+              Object {
+                "alignItems": "center",
+                "height": 40,
+                "justifyContent": "center",
+                "opacity": 1,
+                "width": 40,
+              }
+            }
+          >
+            <Image
+              resizeMode="contain"
               style={
                 Object {
-                  "alignItems": "center",
-                  "backgroundColor": "#61C7A4",
-                  "borderRadius": 20,
-                  "height": 40,
-                  "justifyContent": "center",
-                  "opacity": 1,
-                  "width": 100,
+                  "height": 15,
+                  "tintColor": "#000000",
+                  "width": 15,
+                }
+              }
+            />
+          </View>
+        </View>
+        <Text
+          style={
+            Object {
+              "color": "#61C7A4",
+              "fontFamily": "Poppins-Bold",
+              "fontSize": 25,
+              "lineHeight": 40,
+              "paddingHorizontal": 33.35,
+            }
+          }
+        >
+          My Cart
+        </Text>
+        <RCTScrollView
+          contentContainarStyle={
+            Object {
+              "backgroundColor": "rgba(97, 199, 164, 0.4)",
+              "justifyContent": "space-around",
+              "marginHorizontal": 33.35,
+            }
+          }
+          showsVerticalScrollIndicator={false}
+        >
+          <View>
+            <RCTScrollView
+              closeOnRowBeginSwipe={false}
+              closeOnRowOpen={true}
+              closeOnRowPress={true}
+              closeOnScroll={true}
+              contentContainerStyle={
+                Object {
+                  "backgroundColor": "white",
+                  "borderRadius": 40.019999999999996,
+                  "marginHorizontal": 33.35,
+                  "marginVertical": 33.35,
+                  "padding": 13.34,
+                }
+              }
+              data={Array []}
+              directionalDistanceChangeThreshold={2}
+              disableHiddenLayoutCalculation={false}
+              disableLeftSwipe={false}
+              disableRightSwipe={true}
+              getItem={[Function]}
+              getItemCount={[Function]}
+              keyExtractor={[Function]}
+              leftOpenValue={0}
+              onContentSizeChange={[Function]}
+              onLayout={[Function]}
+              onMomentumScrollBegin={[Function]}
+              onMomentumScrollEnd={[Function]}
+              onScroll={[Function]}
+              onScrollBeginDrag={[Function]}
+              onScrollEndDrag={[Function]}
+              previewFirstRow={false}
+              previewRepeat={false}
+              previewRepeatDelay={1000}
+              recalculateHiddenLayout={false}
+              removeClippedSubviews={false}
+              renderHiddenItem={[Function]}
+              renderItem={[Function]}
+              rightOpenValue={-75}
+              scrollEventThrottle={50}
+              showsVerticalScrollIndicator={false}
+              stickyHeaderIndices={Array []}
+              swipeToClosePercent={50}
+              swipeToOpenPercent={50}
+              swipeToOpenVelocityContribution={0}
+              useAnimatedList={false}
+              useNativeDriver={true}
+              viewabilityConfigCallbackPairs={Array []}
+            >
+              <View />
+            </RCTScrollView>
+            <View
+              style={
+                Object {
+                  "marginHorizontal": 33.35,
                 }
               }
             >
-              <Text
+              <View
+                style={Object {}}
+              >
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                    }
+                  }
+                />
+                <View
+                  style={
+                    Object {
+                      "alignItems": "center",
+                      "backgroundColor": "#fff",
+                      "borderRadius": 120.05999999999999,
+                      "flexDirection": "row",
+                      "height": 96.04799999999999,
+                      "justifyContent": "center",
+                      "paddingHorizontal": 13.34,
+                    }
+                  }
+                >
+                  <TextInput
+                    autoCapitalize="None"
+                    autoCompleteType="name"
+                    keyboardType="name"
+                    onChangeText={[Function]}
+                    placeholder="Enter Coupon"
+                    placeholderTextColor="gray"
+                    style={
+                      Object {
+                        "color": "#212125",
+                        "flex": 1,
+                      }
+                    }
+                  />
+                  <View
+                    accessible={true}
+                    collapsable={false}
+                    focusable={true}
+                    onClick={[Function]}
+                    onResponderGrant={[Function]}
+                    onResponderMove={[Function]}
+                    onResponderRelease={[Function]}
+                    onResponderTerminate={[Function]}
+                    onResponderTerminationRequest={[Function]}
+                    onStartShouldSetResponder={[Function]}
+                    style={
+                      Object {
+                        "alignItems": "center",
+                        "backgroundColor": "#61C7A4",
+                        "borderRadius": 20,
+                        "height": 40,
+                        "justifyContent": "center",
+                        "opacity": 1,
+                        "width": 100,
+                      }
+                    }
+                  >
+                    <Text
+                      style={
+                        Object {
+                          "color": "white",
+                          "fontFamily": "Poppins-SemiBold",
+                          "fontSize": 12,
+                          "lineHeight": 18,
+                        }
+                      }
+                    >
+                      Validate
+                    </Text>
+                  </View>
+                </View>
+              </View>
+              <View
                 style={
                   Object {
-                    "color": "white",
-                    "fontFamily": "Poppins-SemiBold",
-                    "fontSize": 12,
-                    "lineHeight": 18,
+                    "height": 150,
+                    "justifyContent": "space-around",
+                    "marginTop": 33.35,
                   }
                 }
               >
-                Validate
-              </Text>
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "fontFamily": "Poppins-Medium",
+                        "fontSize": 16,
+                        "lineHeight": 20,
+                      }
+                    }
+                  >
+                    Sub - total cost
+                  </Text>
+                  <Text
+                    style={
+                      Object {
+                        "fontFamily": "Poppins-Bold",
+                        "fontSize": 16,
+                        "lineHeight": 20,
+                      }
+                    }
+                  >
+                    $0
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "fontFamily": "Poppins-Medium",
+                        "fontSize": 16,
+                        "lineHeight": 20,
+                      }
+                    }
+                  >
+                    Delivery fee
+                  </Text>
+                  <Text
+                    style={
+                      Object {
+                        "fontFamily": "Poppins-Bold",
+                        "fontSize": 16,
+                        "lineHeight": 20,
+                      }
+                    }
+                  >
+                    $1000
+                  </Text>
+                </View>
+                <View
+                  style={
+                    Object {
+                      "flexDirection": "row",
+                      "justifyContent": "space-between",
+                    }
+                  }
+                >
+                  <Text
+                    style={
+                      Object {
+                        "fontFamily": "Poppins-Medium",
+                        "fontSize": 16,
+                        "lineHeight": 20,
+                      }
+                    }
+                  >
+                    Total Discount
+                  </Text>
+                  <Text
+                    style={
+                      Object {
+                        "fontFamily": "Poppins-Bold",
+                        "fontSize": 16,
+                        "lineHeight": 20,
+                      }
+                    }
+                  >
+                    %0.00
+                  </Text>
+                </View>
+              </View>
+              <View
+                style={
+                  Object {
+                    "backgroundColor": "#212125",
+                    "height": 1,
+                    "width": "100%",
+                  }
+                }
+              />
+              <View
+                style={
+                  Object {
+                    "flexDirection": "row",
+                    "justifyContent": "space-between",
+                  }
+                }
+              >
+                <Text
+                  style={
+                    Object {
+                      "fontFamily": "Poppins-Medium",
+                      "fontSize": 16,
+                      "lineHeight": 20,
+                    }
+                  }
+                >
+                  Total
+                </Text>
+                <Text
+                  style={
+                    Object {
+                      "fontFamily": "Poppins-Bold",
+                      "fontSize": 16,
+                      "lineHeight": 20,
+                    }
+                  }
+                >
+                  $ 0
+                </Text>
+              </View>
+              <View
+                style={
+                  Object {
+                    "height": 100,
+                  }
+                }
+              />
             </View>
           </View>
-        </View>
+        </RCTScrollView>
         <View
           style={
             Object {
-              "height": 150,
-              "justifyContent": "space-around",
-              "marginTop": 33.35,
-            }
-          }
-        >
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-                "justifyContent": "space-between",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "fontFamily": "Poppins-Medium",
-                  "fontSize": 16,
-                  "lineHeight": 20,
-                }
-              }
-            >
-              Sub - total cost
-            </Text>
-            <Text
-              style={
-                Object {
-                  "fontFamily": "Poppins-Bold",
-                  "fontSize": 16,
-                  "lineHeight": 20,
-                }
-              }
-            >
-              $0
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-                "justifyContent": "space-between",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "fontFamily": "Poppins-Medium",
-                  "fontSize": 16,
-                  "lineHeight": 20,
-                }
-              }
-            >
-              Delivery fee
-            </Text>
-            <Text
-              style={
-                Object {
-                  "fontFamily": "Poppins-Bold",
-                  "fontSize": 16,
-                  "lineHeight": 20,
-                }
-              }
-            >
-              $1000
-            </Text>
-          </View>
-          <View
-            style={
-              Object {
-                "flexDirection": "row",
-                "justifyContent": "space-between",
-              }
-            }
-          >
-            <Text
-              style={
-                Object {
-                  "fontFamily": "Poppins-Medium",
-                  "fontSize": 16,
-                  "lineHeight": 20,
-                }
-              }
-            >
-              Discount
-            </Text>
-            <Text
-              style={
-                Object {
-                  "fontFamily": "Poppins-Bold",
-                  "fontSize": 16,
-                  "lineHeight": 20,
-                }
-              }
-            >
-              %0
-            </Text>
-          </View>
-        </View>
-        <View
-          style={
-            Object {
-              "backgroundColor": "#212125",
-              "height": 1,
-              "width": "100%",
-            }
-          }
-        />
-        <View
-          style={
-            Object {
+              "alignItems": "center",
+              "bottom": 0,
               "flexDirection": "row",
-              "justifyContent": "space-between",
+              "marginHorizontal": 33.35,
+              "position": "absolute",
             }
           }
         >
-          <Text
+          <View
+            accessibilityState={
+              Object {
+                "disabled": true,
+              }
+            }
+            accessible={true}
+            collapsable={false}
+            focusable={true}
+            onClick={[Function]}
+            onResponderGrant={[Function]}
+            onResponderMove={[Function]}
+            onResponderRelease={[Function]}
+            onResponderTerminate={[Function]}
+            onResponderTerminationRequest={[Function]}
+            onStartShouldSetResponder={[Function]}
             style={
               Object {
-                "fontFamily": "Poppins-Medium",
-                "fontSize": 16,
-                "lineHeight": 20,
+                "alignItems": "center",
+                "backgroundColor": "rgba(97, 199, 164, 0.4)",
+                "borderRadius": 120.05999999999999,
+                "height": 96.04799999999999,
+                "justifyContent": "center",
+                "marginRight": 13.34,
+                "marginVertical": 33.35,
+                "opacity": 1,
+                "width": "100%",
               }
             }
           >
-            Total
-          </Text>
-          <Text
-            style={
-              Object {
-                "fontFamily": "Poppins-Bold",
-                "fontSize": 16,
-                "lineHeight": 20,
+            <Text
+              style={
+                Object {
+                  "color": "white",
+                  "fontFamily": "Poppins-Regular",
+                  "fontSize": 14,
+                  "lineHeight": 21,
+                }
               }
-            }
-          >
-            $ 0
-          </Text>
+            >
+              Proceed to checkout
+            </Text>
+          </View>
         </View>
-      </View>
+      </RCTSafeAreaView>
     </View>
   </RCTScrollView>
-  <View
-    style={
-      Object {
-        "alignItems": "center",
-        "bottom": 0,
-        "flexDirection": "row",
-        "marginHorizontal": 33.35,
-        "position": "absolute",
-      }
-    }
-  >
-    <View
-      accessible={true}
-      collapsable={false}
-      focusable={true}
-      onClick={[Function]}
-      onResponderGrant={[Function]}
-      onResponderMove={[Function]}
-      onResponderRelease={[Function]}
-      onResponderTerminate={[Function]}
-      onResponderTerminationRequest={[Function]}
-      onStartShouldSetResponder={[Function]}
-      style={
-        Object {
-          "alignItems": "center",
-          "backgroundColor": "#61C7A4",
-          "borderRadius": 120.05999999999999,
-          "height": 96.04799999999999,
-          "justifyContent": "center",
-          "marginRight": 13.34,
-          "marginVertical": 33.35,
-          "opacity": 1,
-          "width": "100%",
-        }
-      }
-    >
-      <Text
-        style={
-          Object {
-            "color": "white",
-            "fontFamily": "Poppins-Regular",
-            "fontSize": 14,
-            "lineHeight": 21,
-          }
-        }
-      >
-        Proceed to checkout
-      </Text>
-    </View>
-  </View>
-</RCTSafeAreaView>
+</View>
 `;

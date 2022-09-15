@@ -38,33 +38,42 @@ This is the solution to the engineering Challenge from SlashDev.
 
 ## APP Installation and Usage
 
-The application is developed using React Native Expo. To start with;
+The application is developed using React Native Expo. To start with first Download Expo Go: https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US 
+
+then;
 
 - Clone this repository:
 
 ```
-    $ git clone https://github.com/voke1/Anthos.git
+    git clone https://github.com/voke1/Anthos.git
+```
+- Go to Directory:
+
+```
+    cd Anthos
 ```
 
 - Install dependencies
 
 ```
-    $ npm install
+    npm install
 ```
-
+if you are using yarn, use the command below
 ```
-    $ yarn install
+    yarn install
 ```
 
 - Start app
 
 ```
-    $ npm expo start
+    npm expo start
+```
+If you are using Yarn, use the command below
+```
+    yarn expo start
 ```
 
-```
-    $ yarn expo start
-```
+Finally, Scan Bar code generated with your already download Expo Go app
 
 ## APP Test
 

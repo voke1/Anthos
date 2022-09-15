@@ -532,13 +532,7 @@ const styles = StyleSheet.create({
   dropdown1BtnStyle: {
     width: "100%",
     height: 55,
-    // flex: 1,
     backgroundColor: "#FFF",
-    // borderRadius: SIZES.radius,
-    // borderWidth: 1,
-    // borderColor: "#444",
-    // marginTop: SIZES.radius,
-    // marginRight: SIZES.base,
   },
   dropdown1BtnTxtStyle: {
     fontFamily: "Poppins-Regular",
