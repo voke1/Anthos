@@ -272,7 +272,7 @@ const Gallery = ({ navigation, route }) => {
                   }}
                 >
                   <Image
-                    source={item.uploaded ? {uri: item.icon}: item.icon}
+                    source={item.uploaded ? { uri: item.icon } : item.icon}
                     style={{
                       width: "100%",
                       height: "100%",
@@ -303,7 +303,7 @@ const Gallery = ({ navigation, route }) => {
           >
             <View style={{ marginTop: SIZES.base, justifyContent: "center" }}>
               <Image
-                source={currentPlant?.icon}
+                source={currentPlant?.uploaded ? { uri: currentPlant?.icon } : currentPlant?.icon}
                 style={{
                   height: 65,
                   width: 65,
@@ -367,7 +367,8 @@ const Gallery = ({ navigation, route }) => {
               justifyContent: "center",
               padding: 0,
               paddingHorizontal: SIZES.base * 1.5,
-              backgroundColor: cart.length < 1 ? COLORS.lightPrimary : COLORS.primary,
+              backgroundColor:
+                cart.length < 1 ? COLORS.lightPrimary : COLORS.primary,
             }}
             labelStyle={{
               color: "white",

@@ -442,7 +442,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
                 justifyContent: "space-between",
               }}
             >
-              <Text style={styles.purchaseItem}>Discount</Text>
+              <Text style={styles.purchaseItem}>Total Discount</Text>
               <Text style={styles.purchaseItemAmount}>{`%${discount.toFixed(
                 2
               )}`}</Text>
