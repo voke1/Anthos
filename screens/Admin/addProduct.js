@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import KeyboardAvoidingView from "react-native/Libraries/Components/Keyboard/KeyboardAvoidingView";
 import { FormInput, TextButton } from "../../components";
 import { COLORS, icons, SIZES } from "../../constants";
 import SmsModal from "../Cart/SmsModal";
@@ -15,6 +16,7 @@ import { launchImageLibrary } from "react-native-image-picker";
 import { useDispatch, useSelector } from "react-redux";
 import { setPlantItem } from "../../stores/product/productActions";
 import * as ImagePicker from "expo-image-picker";
+import KeyboardAvoidingWrapper from "./KeyboardAvoidingWrapper";
 
 const AddProduct = ({ navigation }) => {
   const [image, setImage] = React.useState(null);
@@ -65,164 +67,170 @@ const AddProduct = ({ navigation }) => {
   }
 
   return (
-    <SafeAreaView
-      style={{
-        flex: 1,
-        alignItems: "center",
+    <KeyboardAvoidingWrapper
+      containerStyle={{
         backgroundColor: COLORS.white,
-        padding: SIZES.padding,
-        justifyContent: "space-around",
       }}
     >
-      {/* Success Modal */}
-      {showSmsModal && (
-        <SmsModal
-          isVisible={showSmsModal}
-          onClose={() => {
-            setShowSmsModal(false);
+      <View
+        style={{
+          height: SIZES.height,
+          alignItems: "center",
+          backgroundColor: COLORS.white,
+          padding: SIZES.padding,
+          justifyContent: "space-around",
+        }}
+      >
+        {/* Success Modal */}
+        {showSmsModal && (
+          <SmsModal
+            isVisible={showSmsModal}
+            onClose={() => {
+              setShowSmsModal(false);
+            }}
+            navigation={navigation}
+            screen={"ADMIN"}
+          />
+        )}
+        <Text
+          style={{
+            fontFamily: "Poppins-Bold",
+            fontSize: 28,
+            lineHeight: 44,
           }}
-          navigation={navigation}
-          screen={"ADMIN"}
+        >
+          Add Plant Product
+        </Text>
+        <Pressable style={styles.ProfilePixStyle} onPress={() => uploadImage()}>
+          <Image
+            source={image ? { uri: image } : icons.addItem}
+            style={
+              image
+                ? {
+                    height: "100%",
+                    width: "100%",
+                    borderRadius: 50,
+                    borderWidth: 5,
+                    borderColor: COLORS.primary,
+                  }
+                : {
+                    height: SIZES.radius * 2,
+                    width: SIZES.radius * 2,
+                  }
+            }
+          />
+        </Pressable>
+        <Text
+          style={{
+            fontFamily: "Poppins-Regular",
+            fontSize: 14,
+            lineHeight: 21,
+          }}
+        >
+          Add a beautiful and well edited photo for your plant product.
+        </Text>
+        <FormInput
+          inputStyle={{
+            fontFamily: "Poppins-Regular",
+            fontSize: 14,
+            lineHeight: 21,
+          }}
+          label="Email"
+          keyboardType="name"
+          autoCompleteType="name"
+          onChange={(value) => {
+            setPlantName(value);
+          }}
+          placeholder="Plant title"
+          containerStyle={{
+            borderWidth: 1,
+            borderColor: COLORS.lightGray,
+            borderRadius: SIZES.radius * 3,
+            height: SIZES.radius * 2.4,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          inputContainerStyle={{
+            borderRadius: SIZES.radius * 3,
+          }}
         />
-      )}
-      <Text
-        style={{
-          fontFamily: "Poppins-Bold",
-          fontSize: 28,
-          lineHeight: 44,
-        }}
-      >
-        Add Plant Product
-      </Text>
-      <Pressable style={styles.ProfilePixStyle} onPress={() => uploadImage()}>
-        <Image
-          source={image ? { uri: image } : icons.addItem}
-          style={
-            image
-              ? {
-                  height: "100%",
-                  width: "100%",
-                  borderRadius: 50,
-                  borderWidth: 5,
-                  borderColor: COLORS.primary,
-                }
-              : {
-                  height: SIZES.radius * 2,
-                  width: SIZES.radius * 2,
-                }
-          }
+
+        <FormInput
+          value={plantDesc}
+          multiline={true}
+          keyboardType="name"
+          autoCompleteType="name"
+          onChange={(value) => {
+            setPlantDesc(value);
+          }}
+          placeholder="Plant Description"
+          containerStyle={{
+            borderWidth: 1,
+            borderColor: COLORS.lightGray,
+            borderRadius: SIZES.radius,
+            height: SIZES.radius * 2.4,
+            justifyContent: "center",
+            alignItems: "center",
+            height: 100,
+          }}
+          inputContainerStyle={{
+            borderRadius: SIZES.radius * 3,
+          }}
+          inputStyle={{
+            fontFamily: "Poppins-Regular",
+
+            fontSize: 14,
+            lineHeight: 21,
+          }}
         />
-      </Pressable>
-      <Text
-        style={{
-          fontFamily: "Poppins-Regular",
-          fontSize: 14,
-          lineHeight: 21,
-        }}
-      >
-        Add a beautiful and well edited photo for your plant product.
-      </Text>
-      <FormInput
-        inputStyle={{
-          fontFamily: "Poppins-Regular",
-          fontSize: 14,
-          lineHeight: 21,
-        }}
-        label="Email"
-        keyboardType="name"
-        autoCompleteType="name"
-        onChange={(value) => {
-          setPlantName(value);
-        }}
-        placeholder="Plant title"
-        containerStyle={{
-          borderWidth: 1,
-          borderColor: COLORS.lightGray,
-          borderRadius: SIZES.radius * 3,
-          height: SIZES.radius * 2.4,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        inputContainerStyle={{
-          borderRadius: SIZES.radius * 3,
-        }}
-      />
+        <FormInput
+          inputStyle={{
+            fontFamily: "Poppins-Regular",
 
-      <FormInput
-        value={plantDesc}
-        multiline={true}
-        keyboardType="name"
-        autoCompleteType="name"
-        onChange={(value) => {
-          setPlantDesc(value);
-        }}
-        placeholder="Plant Description"
-        containerStyle={{
-          borderWidth: 1,
-          borderColor: COLORS.lightGray,
-          borderRadius: SIZES.radius,
-          height: SIZES.radius * 2.4,
-          justifyContent: "center",
-          alignItems: "center",
-          height: 100,
-        }}
-        inputContainerStyle={{
-          borderRadius: SIZES.radius * 3,
-        }}
-        inputStyle={{
-          fontFamily: "Poppins-Regular",
+            fontSize: 14,
+            lineHeight: 21,
+          }}
+          keyboardType="name"
+          autoCompleteType="name"
+          onChange={(value) => {
+            setPlantPrice(Number(value));
+          }}
+          placeholder="Plant price"
+          containerStyle={{
+            borderWidth: 1,
+            borderColor: COLORS.lightGray,
+            borderRadius: SIZES.radius * 3,
+            height: SIZES.radius * 2.4,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+          inputContainerStyle={{
+            borderRadius: SIZES.radius * 3,
+          }}
+        />
 
-          fontSize: 14,
-          lineHeight: 21,
-        }}
-      />
-      <FormInput
-        inputStyle={{
-          fontFamily: "Poppins-Regular",
-
-          fontSize: 14,
-          lineHeight: 21,
-        }}
-        keyboardType="name"
-        autoCompleteType="name"
-        onChange={(value) => {
-          setPlantPrice(Number(value));
-        }}
-        placeholder="Plant price"
-        containerStyle={{
-          borderWidth: 1,
-          borderColor: COLORS.lightGray,
-          borderRadius: SIZES.radius * 3,
-          height: SIZES.radius * 2.4,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-        inputContainerStyle={{
-          borderRadius: SIZES.radius * 3,
-        }}
-      />
-
-      <TextButton
-        label="Continue"
-        isDisabled={checkEnabled()}
-        buttonContainerStyle={{
-          height: SIZES.radius * 2.4,
-          alignItems: "center",
-          borderRadius: SIZES.radius * 3,
-          backgroundColor: checkEnabled()
-            ? COLORS.lightPrimary
-            : COLORS.primary,
-          width: "100%",
-        }}
-        labelStyle={{
-          color: "white",
-          fontSize: 14,
-          lineHeight: 21,
-          fontFamily: "Poppins-Regular",
-        }}
-        onPress={() => addPlant()}
-      />
-    </SafeAreaView>
+        <TextButton
+          label="Continue"
+          isDisabled={checkEnabled()}
+          buttonContainerStyle={{
+            height: SIZES.radius * 2.4,
+            alignItems: "center",
+            borderRadius: SIZES.radius * 3,
+            backgroundColor: checkEnabled()
+              ? COLORS.lightPrimary
+              : COLORS.primary,
+            width: "100%",
+          }}
+          labelStyle={{
+            color: "white",
+            fontSize: 14,
+            lineHeight: 21,
+            fontFamily: "Poppins-Regular",
+          }}
+          onPress={() => addPlant()}
+        />
+      </View>
+    </KeyboardAvoidingWrapper>
   );
 };
 

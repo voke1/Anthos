@@ -28,7 +28,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { setCart, setCartItem } from "../../stores/product/productActions";
 
 const Gallery = ({ navigation, route }) => {
-
   const topRef = React.useRef();
   const thumbRef = React.useRef();
   const [activeIndex, setActiveIndex] = useState(0);
@@ -43,9 +42,10 @@ const Gallery = ({ navigation, route }) => {
 
   const dispatch = useDispatch();
 
-    React.useEffect(() => {
-      console.log("Plants",plants);
-    }, []);
+  React.useEffect(() => {
+    console.log("Plants", plants);
+    updatePlants(plants);
+  }, [plants]);
   // Add Item to Cart
   function addToCart(plantItem) {
     let item = cart.find((cartItem) => cartItem.id === plantItem.id);
@@ -55,14 +55,15 @@ const Gallery = ({ navigation, route }) => {
     }
   }
 
+  function updatePlants(plants) {
+    setPlantList(plants);
+  }
+
   function renderHeader() {
     return (
       <Header
-        // title="Discover"
-        // subtitle="Lagos, NG"
         containerStyle={{
-          justifyContent: "center",
-          alignItems: "center",
+          alignItems: "flex-end",
           height: 90,
           paddingHorizontal: SIZES.padding,
         }}
@@ -118,10 +119,9 @@ const Gallery = ({ navigation, route }) => {
             iconPosition="LEFT"
             label="Back"
             containerStyle={{
-              justifyContent: "flex-start",
+              justifyContent: "center",
               backgroundColor: "transparent",
               paddingHorizontal: 0,
-              marginVertical: SIZES.base,
             }}
             labelStyle={{
               color: COLORS.primary,
@@ -303,7 +303,11 @@ const Gallery = ({ navigation, route }) => {
           >
             <View style={{ marginTop: SIZES.base, justifyContent: "center" }}>
               <Image
-                source={currentPlant?.uploaded ? { uri: currentPlant?.icon } : currentPlant?.icon}
+                source={
+                  currentPlant?.uploaded
+                    ? { uri: currentPlant?.icon }
+                    : currentPlant?.icon
+                }
                 style={{
                   height: 65,
                   width: 65,
@@ -393,7 +397,6 @@ const styles = StyleSheet.create({
     alignItems: "flex-end",
     padding: SIZES.base,
   },
-
 
   orderContainer: {
     flex: 0.3,

@@ -23,7 +23,7 @@ import { COLORS, dummyData, icons, SIZES } from "../../constants";
 import { useSelector, useDispatch } from "react-redux";
 import SmsModal from "./SmsModal";
 import { DELIVERY_FEE } from "../../constants/constants";
-import { setCart } from "../../stores/product/productActions";
+import { setCart, setPlantItem } from "../../stores/product/productActions";
 
 const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   const [showPass, setShowPass] = useState(false);
@@ -42,6 +42,13 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
     updateCart(cart);
   }, [cart]);
 
+  useEffect(() => {
+    if (showSmsModal) {
+      dispatch(setCart([]));
+      dispatch(setPlantItem());
+    }
+  }, [showSmsModal]);
+
   function updateCart(cart) {
     setMyCartList(cart);
   }
@@ -51,9 +58,8 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
     return (
       <Header
         containerStyle={{
-          justifyContent: "center",
-          alignItems: "center",
-          height: 70,
+          alignItems: "flex-end",
+          height: 90,
           paddingHorizontal: SIZES.padding,
         }}
         titleStyle={{
@@ -492,7 +498,9 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
             lineHeight: 21,
             fontFamily: "Poppins-Regular",
           }}
-          onPress={() => setShowSmsModal(true)}
+          onPress={() => {
+            setShowSmsModal(true);
+          }}
         />
       </View>
     </SafeAreaView>

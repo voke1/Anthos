@@ -19,15 +19,13 @@ const productReducer = (state = initialState, action) => {
       return {
         ...state,
         cart: [...state.cart, action.payload.data],
-        // plants: [...state.cart, ]
         loading: false,
       };
 
     case authActionTypes.PLANTITEM_SUCCESS:
       return {
         ...state,
-        plants: [...state.plants, action.payload.data],
-        // plants: [...state.cart, ]
+        plants: [...initialState.plants],
         loading: false,
       };
 
