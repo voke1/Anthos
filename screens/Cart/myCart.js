@@ -73,7 +73,6 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
         titleStyle={{
           fontSize: 18,
           lineHeight: 27,
-          fontFamily: "Poppins-Bold",
         }}
         rightComponent={
           <IconButton
@@ -104,7 +103,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
             }}
             labelStyle={{
               color: COLORS.primary,
-              fontFamily: "Poppins-Bold",
+
               lineHeight: 18,
               fontSize: 12,
               paddingHorizontal: SIZES.base,
@@ -207,13 +206,13 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
             paddingHorizontal: SIZES.padding,
             fontSize: 25,
             lineHeight: 40,
-            fontFamily: "Poppins-Bold",
+
             color: COLORS.primary,
           }}
         >
           My Cart
         </Text>
-        <ScrollView showsVerticalScrollIndicator={false}>
+        <View >
           <SwipeListView
             data={myCartList}
             disableRightSwipe={true}
@@ -258,7 +257,6 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
                   >
                     <Text
                       style={{
-                        fontFamily: "Poppins-Bold",
                         fontSize: 16,
                         lineHeight: 20,
                       }}
@@ -273,7 +271,6 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
                   </View>
                   <Text
                     style={{
-                      fontFamily: "Poppins",
                       fontSize: 11,
                       lineHeight: 16,
                       color: "gray",
@@ -292,7 +289,6 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
                   >
                     <Text
                       style={{
-                        fontFamily: "Poppins-Bold",
                         fontSize: 12,
                         lineHeight: 18,
                         color: COLORS.primary,
@@ -304,7 +300,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
                       valueContainerStyle={{}}
                       valueStyle={{
                         color: COLORS.primary,
-                        fontFamily: "Poppins-Bold",
+
                         fontSize: 12,
                         lineHeight: 18,
                       }}
@@ -403,7 +399,7 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
                   <Text
                     style={{
                       color: "white",
-                      fontFamily: "Poppins-SemiBold",
+
                       fontSize: 12,
                       lineHeight: 18,
                     }}
@@ -465,15 +461,13 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
               <Text style={styles.purchaseItemAmount}>{`$ ${total}`}</Text>
             </View>
 
-            <View style={{ height: 100 }} />
           </View>
-        </ScrollView>
+        </View>
+
+
         {/* Footer BUtton  */}
         <View
-          style={{
-            position: "absolute",
-            bottom: 0,
-            flexDirection: "row",
+          style={{    
             alignItems: "center",
             marginHorizontal: SIZES.padding,
           }}
@@ -484,18 +478,15 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
             buttonContainerStyle={{
               height: SIZES.radius * 2.4,
               width: "100%",
-              alignItems: "center",
               borderRadius: SIZES.radius * 3,
               backgroundColor:
                 cart.length < 1 ? COLORS.lightPrimary : COLORS.primary,
               marginVertical: SIZES.padding,
-              marginRight: SIZES.base,
             }}
             labelStyle={{
               color: "white",
               fontSize: 14,
               lineHeight: 21,
-              fontFamily: "Poppins-Regular",
             }}
             onPress={() => {
               setShowSmsModal(true);
@@ -509,12 +500,10 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
 
 const styles = StyleSheet.create({
   purchaseItem: {
-    fontFamily: "Poppins-Medium",
     lineHeight: 20,
     fontSize: 16,
   },
   purchaseItemAmount: {
-    fontFamily: "Poppins-Bold",
     lineHeight: 20,
     fontSize: 16,
   },
@@ -534,7 +523,6 @@ const styles = StyleSheet.create({
     backgroundColor: "#FFF",
   },
   dropdown1BtnTxtStyle: {
-    fontFamily: "Poppins-Regular",
     fontSize: 14,
     lineHeight: 21,
     textAlign: "left",

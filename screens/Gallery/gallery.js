@@ -70,7 +70,7 @@ const Gallery = ({ navigation, route }) => {
         titleStyle={{
           fontSize: 18,
           lineHeight: 27,
-          fontFamily: "Poppins-Bold",
+          
         }}
         rightComponent={
           <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -125,7 +125,7 @@ const Gallery = ({ navigation, route }) => {
             }}
             labelStyle={{
               color: COLORS.primary,
-              fontFamily: "Poppins-Bold",
+              
               lineHeight: 18,
               fontSize: 12,
               paddingHorizontal: SIZES.base,
@@ -221,7 +221,7 @@ const Gallery = ({ navigation, route }) => {
                       }}
                       labelStyle={{
                         color: item.isSelected ? "white" : "black",
-                        fontFamily: "Poppins-Regular",
+                        
                         fontSize: 10,
                         lineHeight: 21,
                         fontWeight: "bold",
@@ -320,7 +320,7 @@ const Gallery = ({ navigation, route }) => {
               <Text
                 style={{
                   color: "black",
-                  fontFamily: "Poppins-Bold",
+                  
                   fontSize: 14,
                   lineHeight: 21,
                   fontWeight: "bold",
@@ -331,7 +331,7 @@ const Gallery = ({ navigation, route }) => {
               <Text
                 style={{
                   color: "black",
-                  fontFamily: "Poppins-Regular",
+                  
                   fontSize: 10,
                   lineHeight: 15,
                 }}
@@ -376,7 +376,7 @@ const Gallery = ({ navigation, route }) => {
             }}
             labelStyle={{
               color: "white",
-              fontFamily: "Poppins-Regular",
+              
               fontSize: 14,
               lineHeight: 21,
             }}

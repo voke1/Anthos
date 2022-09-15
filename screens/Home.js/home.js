@@ -44,7 +44,6 @@ const Home = ({ navigation }) => {
                 color: "white",
                 fontSize: 14,
                 lineHeight: 21,
-                fontFamily: "Poppins-Bold",
               }}
               iconStyle={{
                 tintColor: COLORS.white,
@@ -62,7 +61,7 @@ const Home = ({ navigation }) => {
               color: "white",
               fontSize: 14,
               lineHeight: 21,
-              fontFamily: "Poppins-Bold",
+
               fontWeight: "bold",
             }}
             onPress={() => navigation.navigate("AddProductScreen")}
@@ -95,7 +94,7 @@ const styles = StyleSheet.create({
   headerText: {
     color: COLORS.black,
     paddingHorizontal: SIZES.base,
-    fontFamily: "Poppins-Regular",
+
     fontSize: 31,
     lineHeight: 28,
     textAlign: "center",
@@ -117,7 +116,7 @@ const styles = StyleSheet.create({
     color: COLORS.black,
     paddingHorizontal: SIZES.base,
     paddingVertical: SIZES.padding * 2,
-    fontFamily: "Poppins-Regular",
+
     fontSize: 13,
     lineHeight: 18,
     textAlign: "center",

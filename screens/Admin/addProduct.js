@@ -90,7 +90,6 @@ const AddProduct = ({ navigation }) => {
         )}
         <Text
           style={{
-            fontFamily: "Poppins-Bold",
             fontSize: 28,
             lineHeight: 44,
           }}
@@ -118,7 +117,6 @@ const AddProduct = ({ navigation }) => {
         </Pressable>
         <Text
           style={{
-            fontFamily: "Poppins-Regular",
             fontSize: 14,
             lineHeight: 21,
           }}
@@ -127,7 +125,6 @@ const AddProduct = ({ navigation }) => {
         </Text>
         <FormInput
           inputStyle={{
-            fontFamily: "Poppins-Regular",
             fontSize: 14,
             lineHeight: 21,
           }}
@@ -173,7 +170,7 @@ const AddProduct = ({ navigation }) => {
             borderRadius: SIZES.radius * 3,
           }}
           inputStyle={{
-            fontFamily: "Poppins-Regular",
+            
 
             fontSize: 14,
             lineHeight: 21,
@@ -181,7 +178,7 @@ const AddProduct = ({ navigation }) => {
         />
         <FormInput
           inputStyle={{
-            fontFamily: "Poppins-Regular",
+            
 
             fontSize: 14,
             lineHeight: 21,
@@ -221,7 +218,7 @@ const AddProduct = ({ navigation }) => {
             color: "white",
             fontSize: 14,
             lineHeight: 21,
-            fontFamily: "Poppins-Regular",
+            
           }}
           onPress={() => addPlant()}
         />
