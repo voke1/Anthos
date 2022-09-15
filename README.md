@@ -28,17 +28,19 @@ This is the solution to the engineering Challenge from SlashDev.
 
 ![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/cart.jpeg?raw=true)
 
-![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/galler.jpeg?raw=true)
+![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/gallery.jpeg?raw=true)
 
 ![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/home.jpeg?raw=true)
 
 ![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/modal.jpeg?raw=true)
 
+![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/admin.jpeg?raw=true)
+
 ![alt text](https://github.com/voke1/Anthos/blob/master/screenshots/splash.jpeg?raw=true)
 
 ## APP Installation and Usage
 
-The application is developed using React Native Expo. To start with first Download Expo Go: https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US 
+The application is developed using React Native Expo. To run a debug version first Download Expo Go: https://play.google.com/store/apps/details?id=host.exp.exponent&hl=en&gl=US 
 
 then;
 

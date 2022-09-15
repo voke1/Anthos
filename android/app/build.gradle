@@ -144,6 +144,7 @@ android {
 
     defaultConfig {
         applicationId "com.anthos"
+        compileSdkVersion rootProject.ext.compileSdkVersion
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
