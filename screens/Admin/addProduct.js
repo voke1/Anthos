@@ -67,11 +67,7 @@ const AddProduct = ({ navigation }) => {
   }
 
   return (
-    <KeyboardAvoidingWrapper
-      containerStyle={{
-        backgroundColor: COLORS.white,
-      }}
-    >
+    <KeyboardAvoidingWrapper>
       <View
         style={{
           height: SIZES.height,
