@@ -23,13 +23,14 @@ import { COLORS, dummyData, icons, SIZES } from "../../constants";
 import { useSelector, useDispatch } from "react-redux";
 import SmsModal from "./SmsModal";
 import { DELIVERY_FEE } from "../../constants/constants";
-import { setCart, setPlantItem } from "../../stores/product/productActions";
+import { setCart, setPlants } from "../../stores/product/productActions";
 import KeyboardAvoidingWrapper from "../Admin/KeyboardAvoidingWrapper";
 const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   const [showPass, setShowPass] = useState(false);
   const [showSmsModal, setShowSmsModal] = useState(false);
   const [discount, setDiscount] = useState(0);
   const cart = useSelector((state) => state.productReducer.cart);
+  const plants = useSelector((state) => state.productReducer.plants);
   const [myCartList, setMyCartList] = useState(cart);
   const [total, setTotal] = useState(0);
   const [subTotal, setSubTotal] = useState(0);
@@ -45,12 +46,19 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   useEffect(() => {
     if (showSmsModal) {
       dispatch(setCart([]));
-      // dispatch(setPlantItem());
+      updatePlant();
     }
   }, [showSmsModal]);
 
   function updateCart(cart) {
     setMyCartList(cart);
+  }
+
+  function updatePlant() {
+    let updatedPlants = plants.map((item) => {
+      return { ...item, isSelected: false };
+    });
+    dispatch(setPlants(updatedPlants));
   }
 
   // Cart Screen Header

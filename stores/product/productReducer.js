@@ -29,6 +29,13 @@ const productReducer = (state = initialState, action) => {
         loading: false,
       };
 
+    case authActionTypes.PLANT_SUCCESS:
+      return {
+        ...state,
+        plants:  action.payload.data,
+        loading: false,
+      };
+
     case authActionTypes.CART_SUCCESS:
       return {
         ...state,

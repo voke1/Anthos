@@ -4,6 +4,7 @@ import {
   CART_FAILURE,
   CART_SUCCESS,
   PLANTITEM_SUCCESS,
+  PLANT_SUCCESS,
 } from "../../constants/types";
 
 const setCartSuccess = (data) => ({
@@ -18,6 +19,11 @@ const setCartItemSuccess = (data) => ({
 
 const setPlantItemSuccess = (data) => ({
   type: PLANTITEM_SUCCESS,
+  payload: { data },
+});
+
+const setPlantSuccess = (data) => ({
+  type: PLANT_SUCCESS,
   payload: { data },
 });
 
@@ -40,6 +46,12 @@ export function setCartItem(data) {
 export function setPlantItem(data) {
   return async (dispatch) => {
     return dispatch(setPlantItemSuccess(data));
+  };
+}
+
+export function setPlants(data) {
+  return async (dispatch) => {
+    return dispatch(setPlantSuccess(data));
   };
 }
 
