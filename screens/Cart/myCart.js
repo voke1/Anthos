@@ -8,6 +8,8 @@ import {
   Text,
   TouchableOpacity,
   View,
+  Keyboard,
+  TouchableWithoutFeedback,
 } from "react-native";
 import {
   FormInput,
@@ -180,11 +182,13 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
   }
 
   return (
-    <KeyboardAvoidingWrapper style={{ backgroundColor: COLORS.main }}>
+    <KeyboardAvoidingWrapper
+      style={{ backgroundColor: COLORS.main }}
+      onPress={Keyboard.dismiss}
+    >
       <View
         style={{
           flex: 1,
-
           backgroundColor: COLORS.main,
         }}
       >
@@ -206,13 +210,12 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
             paddingHorizontal: SIZES.padding,
             fontSize: 25,
             lineHeight: 40,
-
             color: COLORS.primary,
           }}
         >
           My Cart
         </Text>
-        <View >
+        <View>
           <SwipeListView
             data={myCartList}
             disableRightSwipe={true}
@@ -459,14 +462,12 @@ const MyCart = ({ navigation, route, isSuccessVisible, onClose, signout }) => {
               <Text style={styles.purchaseItem}>Total</Text>
               <Text style={styles.purchaseItemAmount}>{`$ ${total}`}</Text>
             </View>
-
           </View>
         </View>
 
-
         {/* Footer BUtton  */}
         <View
-          style={{    
+          style={{
             alignItems: "center",
             marginHorizontal: SIZES.padding,
           }}

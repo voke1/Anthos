@@ -46,6 +46,7 @@ const Gallery = ({ navigation, route }) => {
     console.log("Plants", plants);
     updatePlants(plants);
   }, [plants]);
+
   // Add Item to Cart
   function addToCart(plantItem) {
     let item = cart.find((cartItem) => cartItem.id === plantItem.id);
@@ -70,7 +71,6 @@ const Gallery = ({ navigation, route }) => {
         titleStyle={{
           fontSize: 18,
           lineHeight: 27,
-          
         }}
         rightComponent={
           <View style={{ justifyContent: "center", alignItems: "center" }}>
@@ -81,10 +81,6 @@ const Gallery = ({ navigation, route }) => {
                 height: 30,
                 justifyContent: "center",
                 alignItems: "center",
-                // borderWidth: 1,
-                // borderRadius: SIZES.radius,
-                // borderColor: "gray",
-                // backgroundColor: "white",
               }}
               iconStyle={{
                 width: "100%",
@@ -125,7 +121,7 @@ const Gallery = ({ navigation, route }) => {
             }}
             labelStyle={{
               color: COLORS.primary,
-              
+
               lineHeight: 18,
               fontSize: 12,
               paddingHorizontal: SIZES.base,
@@ -166,125 +162,116 @@ const Gallery = ({ navigation, route }) => {
       <View
         style={{
           flex: 1,
+          justifyContent: "space-around",
         }}
       >
-        <View
-          style={{
-            width: SIZES.width,
+        <FlatList
+          data={plantList}
+          ref={topRef}
+          horizontal
+          pagingEnabled
+          keyExtractor={(item) => `${item.id}`}
+          onMomentumScrollEnd={(event) => {
+            setActiveIndex(
+              Math.floor(event.nativeEvent.contentOffset.x / SIZES.width)
+            );
           }}
-        >
-          <FlatList
-            data={plantList}
-            ref={topRef}
-            horizontal
-            pagingEnabled
-            keyExtractor={(item) => `${item.id}`}
-            onMomentumScrollEnd={(event) => {
-              setActiveIndex(
-                Math.floor(event.nativeEvent.contentOffset.x / SIZES.width)
-              );
-            }}
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => {
-              return (
-                <TouchableOpacity
-                  style={{
-                    width: SIZES.width,
-                    height: SIZES.height / 1.8,
-                    // marginRight: SIZES.base,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: COLORS.main,
-                  }}
+          showsHorizontalScrollIndicator={false}
+          renderItem={({ item, index }) => {
+            return (
+              <TouchableOpacity
+                style={{
+                  width: SIZES.width,
+                  height: SIZES.height / 1.8,
+                  // marginRight: SIZES.base,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: COLORS.main,
+                }}
+              >
+                <ImageBackground
+                  source={item.uploaded ? { uri: item.icon } : item.icon}
+                  style={styles.plantProduct}
+                  resizeMode="contain"
                 >
-                  <ImageBackground
-                    source={item.uploaded ? { uri: item.icon } : item.icon}
-                    style={styles.plantProduct}
-                    resizeMode="contain"
-                  >
-                    <TextButton
-                      label={item.isSelected ? "Added to Cart" : "Add to Cart"}
-                      isDisabled={item.isSelected ? true : false}
-                      buttonContainerStyle={{
-                        height: 30,
-                        width: "25%",
-                        borderRadius: SIZES.radius * 3,
-                        justifyContent: "center",
-                        padding: 0,
-                        paddingHorizontal: SIZES.base * 1.5,
-                        backgroundColor: item.isSelected
-                          ? COLORS.primary
-                          : COLORS.main,
-                        borderColor: item.isSelected ? null : COLORS.primary,
+                  <TextButton
+                    label={item.isSelected ? "Added to Cart" : "Add to Cart"}
+                    isDisabled={item.isSelected ? true : false}
+                    buttonContainerStyle={{
+                      height: 30,
+                      width: "25%",
+                      borderRadius: SIZES.radius * 3,
+                      justifyContent: "center",
+                      padding: 0,
+                      paddingHorizontal: SIZES.base * 1.5,
+                      backgroundColor: item.isSelected
+                        ? COLORS.primary
+                        : COLORS.main,
+                      borderColor: item.isSelected ? null : COLORS.primary,
 
-                        borderWidth: item.isSelected ? null : 2,
-                      }}
-                      labelStyle={{
-                        color: item.isSelected ? "white" : "black",
-                        
-                        fontSize: 10,
-                        lineHeight: 21,
-                        fontWeight: "bold",
-                      }}
-                      onPress={() => addToCart(item)}
-                      disabled={false}
-                    />
-                  </ImageBackground>
-                </TouchableOpacity>
-              );
-            }}
-          />
-        </View>
-
-        <View
-          style={{
-            width: SIZES.width,
-            height: 120,
-            justifyContent: "center",
-            alignItems: "center",
-            padding: SIZES.base,
-          }}
-        >
-          {/* Image thumbref */}
-          <FlatList
-            data={plantList}
-            ref={thumbRef}
-            horizontal
-            keyExtractor={(item) => `${item.id}`}
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => {
-              return (
-                <TouchableOpacity
-                  onPress={() => {
-                    setCurrentPlant(item);
-                    scrollToActiveIndex(index);
-                  }}
-                  style={{
-                    width: 65,
-                    height: 65,
-                    borderRadius: SIZES.padding,
-                    marginRight: SIZES.base,
-                    justifyContent: "center",
-                    alignItems: "center",
-                    backgroundColor: COLORS.white,
-                    borderWidth: 1,
-                    borderColor: activeIndex === index ? "black" : "white",
-                  }}
-                >
-                  <Image
-                    source={item.uploaded ? { uri: item.icon } : item.icon}
-                    style={{
-                      width: "100%",
-                      height: "100%",
-                      borderRadius: SIZES.padding,
+                      borderWidth: item.isSelected ? null : 2,
                     }}
-                    resizeMode="contain"
+                    labelStyle={{
+                      color: item.isSelected ? "white" : "black",
+
+                      fontSize: 10,
+                      lineHeight: 21,
+                      fontWeight: "bold",
+                    }}
+                    onPress={() => addToCart(item)}
+                    disabled={false}
                   />
-                </TouchableOpacity>
-              );
-            }}
-          />
-        </View>
+                </ImageBackground>
+              </TouchableOpacity>
+            );
+          }}
+        />
+
+        {/* Image thumbref */}
+
+        <FlatList
+          data={plantList}
+          ref={thumbRef}
+          horizontal
+          keyExtractor={(item) => `${item.id}`}
+          showsHorizontalScrollIndicator={false}
+          contentContainerStyle={{
+            marginVertical: SIZES.base,
+            padding: SIZES.base,
+            marginHorizontal: SIZES.base,
+          }}
+          renderItem={({ item, index }) => {
+            return (
+              <TouchableOpacity
+                onPress={() => {
+                  setCurrentPlant(item);
+                  scrollToActiveIndex(index);
+                }}
+                style={{
+                  width: SIZES.padding * 4,
+                  height: SIZES.padding * 4,
+                  borderRadius: SIZES.padding,
+                  marginRight: SIZES.base,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  backgroundColor: COLORS.white,
+                  borderWidth: 1,
+                  borderColor: activeIndex === index ? "black" : "white",
+                }}
+              >
+                <Image
+                  source={item.uploaded ? { uri: item.icon } : item.icon}
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    borderRadius: SIZES.padding,
+                  }}
+                  resizeMode="contain"
+                />
+              </TouchableOpacity>
+            );
+          }}
+        />
       </View>
 
       <View style={styles.orderContainer}>
@@ -309,8 +296,8 @@ const Gallery = ({ navigation, route }) => {
                     : currentPlant?.icon
                 }
                 style={{
-                  height: 65,
-                  width: 65,
+                  height: SIZES.padding * 3,
+                  width: SIZES.padding * 3,
                   marginHorizontal: SIZES.base,
                   borderRadius: 50,
                 }}
@@ -320,7 +307,7 @@ const Gallery = ({ navigation, route }) => {
               <Text
                 style={{
                   color: "black",
-                  
+
                   fontSize: 14,
                   lineHeight: 21,
                   fontWeight: "bold",
@@ -331,7 +318,7 @@ const Gallery = ({ navigation, route }) => {
               <Text
                 style={{
                   color: "black",
-                  
+
                   fontSize: 10,
                   lineHeight: 15,
                 }}
@@ -363,7 +350,7 @@ const Gallery = ({ navigation, route }) => {
             isDisabled={cart.length < 1 ? true : false}
             label={"PROCEED TO ORDER"}
             buttonContainerStyle={{
-              height: 60,
+              height: SIZES.padding * 3,
               width: "100%",
               borderRadius: SIZES.radius * 3,
               backgroundColor: COLORS.white,
@@ -376,7 +363,7 @@ const Gallery = ({ navigation, route }) => {
             }}
             labelStyle={{
               color: "white",
-              
+
               fontSize: 14,
               lineHeight: 21,
             }}
@@ -400,6 +387,7 @@ const styles = StyleSheet.create({
 
   orderContainer: {
     flex: 0.3,
+    // height: SIZES.height/4,
     justifyContent: "space-around",
     borderTopLeftRadius: SIZES.padding * 2,
     borderTopRightRadius: SIZES.padding * 2,
