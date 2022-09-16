@@ -128,7 +128,6 @@ const AddProduct = ({ navigation }) => {
             fontSize: 14,
             lineHeight: 21,
           }}
-          label="Email"
           keyboardType="name"
           autoCompleteType="name"
           onChange={(value) => {
@@ -161,25 +160,20 @@ const AddProduct = ({ navigation }) => {
             borderWidth: 1,
             borderColor: COLORS.lightGray,
             borderRadius: SIZES.radius,
-            height: SIZES.radius * 2.4,
+            height: SIZES.radius * 4,
             justifyContent: "center",
             alignItems: "center",
-            height: 100,
           }}
           inputContainerStyle={{
             borderRadius: SIZES.radius * 3,
           }}
           inputStyle={{
-            
-
             fontSize: 14,
             lineHeight: 21,
           }}
         />
         <FormInput
           inputStyle={{
-            
-
             fontSize: 14,
             lineHeight: 21,
           }}
@@ -218,7 +212,6 @@ const AddProduct = ({ navigation }) => {
             color: "white",
             fontSize: 14,
             lineHeight: 21,
-            
           }}
           onPress={() => addPlant()}
         />
@@ -240,11 +233,10 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: COLORS.primary,
-    height: 300,
-    width: 200,
+    height: SIZES.height / 2.5,
+    width: SIZES.width / 2,
     margin: 2,
     borderRadius: 50,
-
     zIndex: 5,
   },
 });
