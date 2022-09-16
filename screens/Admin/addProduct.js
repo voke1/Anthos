@@ -67,7 +67,7 @@ const AddProduct = ({ navigation }) => {
   }
 
   return (
-    <KeyboardAvoidingWrapper>
+    <KeyboardAvoidingWrapper contentStyle={{backgroundColor: COLORS.white}}>
       <View
         style={{
           height: SIZES.height,
@@ -75,6 +75,7 @@ const AddProduct = ({ navigation }) => {
           backgroundColor: COLORS.white,
           padding: SIZES.padding,
           justifyContent: "space-around",
+          marginVertical: SIZES.padding,
         }}
       >
         {/* Success Modal */}
