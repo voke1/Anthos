@@ -25,7 +25,7 @@
 - Eslint; Airbnb (Coding style),
 
 
-SEE VIDEO EXPLANATION HERE: https://drive.google.com/file/d/1QTVGFZZ8Q3HUbl8viyg3DNnlqNsDxLJj/view?usp=sharing
+
 
 ## Screenshots
 
