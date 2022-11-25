@@ -1,6 +1,6 @@
-# SlashDev task app: Anthos
+#Anthos
 
-This is the solution to the engineering Challenge from SlashDev.
+Plant cart app.
 
 ## Features/Screens
 
