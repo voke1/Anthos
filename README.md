@@ -1,6 +1,6 @@
-##Anthos
+# Anthos
 
-Plant ecommerce app.
+ Plant ecommerce app.
 
 ## Features/Screens
 
