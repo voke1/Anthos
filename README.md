@@ -1,6 +1,8 @@
 # Anthos
 
  Plant ecommerce app.
+ 
+ Project video description: https://drive.google.com/file/d/1QTVGFZZ8Q3HUbl8viyg3DNnlqNsDxLJj/view?usp=sharing
 
 ## Features/Screens
 
