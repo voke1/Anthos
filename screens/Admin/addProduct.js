@@ -42,7 +42,6 @@ const AddProduct = ({ navigation }) => {
       quality: 1,
     });
 
-    console.log("IMAGE RESULT:", result);
     if (!result.cancelled) {
       setImage(result.uri);
     }
